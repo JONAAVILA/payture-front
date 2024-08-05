@@ -1,20 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import React, { useCallback } from 'react';
+import { Outfit_400Regular,Outfit_500Medium, useFonts } from '@expo-google-fonts/outfit';
+import * as SplashScreen from 'expo-splash-screen';
+import Main from './Main.jsx';
+
+SplashScreen.preventAutoHideAsync()
 
 export default function App() {
+
+  let [fontsLoaded] = useFonts({
+    Outfit_400Regular,
+    Outfit_500Medium
+  })
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync()
+    }
+  }, [fontsLoaded])
+
+  if (!fontsLoaded) {
+    return null
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <Main onLayout={onLayoutRootView} />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
