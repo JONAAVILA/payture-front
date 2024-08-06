@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import theme from "../../theme";
 
 
-export default function HeadingText ({children,color,fontSize,restOfProps}){
+export default function DefaultText ({children,color,fontSize,restOfProps}){
 
     const styleText =[
         styles.text,
@@ -21,14 +21,17 @@ export default function HeadingText ({children,color,fontSize,restOfProps}){
 
 const styles = StyleSheet.create({
     text:{
-        color:theme.color.grey,
-        fontSize:theme.size.large,
-        fontFamily:theme.fontFamily.mediun
+        color:theme.color.white,
+        fontSize:theme.size.small,
+        fontFamily:theme.fontFamily.regular
     },
-    mediun:{
-        fontSize:theme.size.mediun
+    xsmall:{
+        fontSize:theme.size.xsmall
     },
-    yellow:{
-        color:theme.color.yellow
+    thin:{
+        fontSize:theme.size.thin
+    },
+    grey:{
+        color:theme.color.grey
     }
 })

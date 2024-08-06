@@ -1,7 +1,8 @@
 const theme = {
     color:{
-        grey:'#bebebe',
-        blackGrey:'#838383',
+        white:'#F3F3F3',
+        grey:'#838383',
+        blackGrey:'#2A2A2A',
         black:'#0B0B0B',
         yellow:'#FEFD8C',
         green:'#5CAB8C'
@@ -11,7 +12,7 @@ const theme = {
         xsmall:15,
         small:18,
         mediun:35,
-        large:50
+        large:60
     },
     fontFamily:{
         regular:'Outfit_400Regular',

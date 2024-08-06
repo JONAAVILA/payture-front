@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
-import Login from "./src/views/Login.jsx";
+import { StyleSheet, View } from "react-native";
+import Login from "./src/views/login/Login.jsx";
 import { StatusBar } from "expo-status-bar";
+import theme from "./src/theme.jsx";
 
 export default function Main ({onLayout}){
     return(
@@ -14,7 +15,8 @@ export default function Main ({onLayout}){
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#292928',
+      width:'100%',
+      backgroundColor:theme.color.blackGrey,
       alignItems: 'center',
       justifyContent: 'center',
     },
