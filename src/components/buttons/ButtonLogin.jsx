@@ -1,8 +1,8 @@
-import { Pressable, StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import theme from "../../theme";
 
-export default function ButtonLogin ({color,resOfProps,colorIcon,iconLeft}){
+export default function ButtonLogin ({color,resOfProps,colorIcon,iconLeft,onPress}){
 
     const buttonStyle = [
         styles.button,
@@ -16,12 +16,12 @@ export default function ButtonLogin ({color,resOfProps,colorIcon,iconLeft}){
     ]
 
     return(
-        <Pressable style={buttonStyle} {...resOfProps} >
+        <TouchableOpacity style={buttonStyle} onPress={onPress} {...resOfProps} >
             <AntDesign style={iconStyle}
                        name="right"
                        size={35}
                        />
-        </Pressable>
+        </TouchableOpacity>
     )
 }
 

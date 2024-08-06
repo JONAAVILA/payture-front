@@ -24,7 +24,31 @@ const styles = StyleSheet.create({
         marginLeft:15,
         width:325,
         padding:10
-
+    },
+    box_singin:{
+        marginTop:15,
+        flexDirection:'row',
+        width:400,
+    },
+    box_input_login:{
+        marginTop:30,
+        justifyContent:'center',
+    },
+    box_input_singin:{
+        backgroundColor:theme.color.blackGrey,
+        borderRadius:10,
+        marginRight:15,
+        width:325,
+        padding:10, 
+        justifyContent:'space-around'
+    },
+    input:{
+        backgroundColor:theme.color.black,
+        height:50,
+        borderRadius:10,
+        marginTop:5,
+        padding:8,
+        color:theme.color.white
     }
 })
 

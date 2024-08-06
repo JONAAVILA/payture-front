@@ -6,8 +6,9 @@ export default function DefaultText ({children,color,fontSize,restOfProps}){
 
     const styleText =[
         styles.text,
-        fontSize === 'mediun' && styles.mediun,
-        color === 'yellow' && styles.yellow
+        fontSize === 'xsmall' && styles.xsmall,
+        fontSize === 'thin' && styles.thin,
+        color === 'yellow' && styles.yellow,
     ]
 
     return(

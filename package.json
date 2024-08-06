@@ -11,12 +11,15 @@
   "dependencies": {
     "@expo-google-fonts/outfit": "^0.2.3",
     "@expo/vector-icons": "^14.0.2",
+    "axios": "^1.7.3",
     "expo": "~51.0.24",
     "expo-font": "^12.0.9",
     "expo-splash-screen": "^0.27.5",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
-    "react-native": "0.74.3"
+    "react-native": "0.74.3",
+    "react-router-native": "^6.26.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
