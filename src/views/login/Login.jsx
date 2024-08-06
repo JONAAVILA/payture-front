@@ -6,6 +6,7 @@ import ButtonLogin from '../../components/buttons/ButtonLogin';
 import theme from '../../theme';
 import { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-native';
 
 export default function Login (){
     const [ inputValue,setInputValue ] = useState("")
@@ -14,12 +15,16 @@ export default function Login (){
         if(text) setInputValue(text)
 
     }
-
+    
+    const navigate = useNavigate()
+   
     const handleSubmit = async ()=>{
         try {
             const access = await axios.post('http://192.168.1.81:3000/users/match',{userName:inputValue})
-            if(access){
+            if(access.data === true){
                  console.log(access.data);
+                 navigate('/usercreate')
+
             }
         } catch (error) {
             console.log(error)
