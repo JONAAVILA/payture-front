@@ -7,25 +7,28 @@ import theme from '../../theme';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-native';
+import { URL_USER_EXIST } from '@env';
 
 export default function Login (){
     const [ inputValue,setInputValue ] = useState("")
+    const [ error,setError ] = useState("")
 
-    const handleValue = (text)=>{
-        if(text) setInputValue(text)
-
+    const handleInputValue = (text)=>{
+        if(text.length >= 1) setInputValue(text)
+        if(text.length === 0) setInputValue("")
+        setError("")
     }
     
     const navigate = useNavigate()
    
     const handleSubmit = async ()=>{
         try {
-            const access = await axios.post('http://192.168.1.81:3000/users/match',{userName:inputValue})
+            const access = await axios.post(URL_USER_EXIST,{email:inputValue})
             if(access.data === true){
                  console.log(access.data);
                  navigate('/usercreate')
-
             }
+            setError("invalid email")
         } catch (error) {
             console.log(error)
         }
@@ -63,11 +66,12 @@ export default function Login (){
                     <TextInput
                         style={styles.input}
                         value={inputValue}
-                        onChangeText={handleValue}
+                        onChangeText={handleInputValue}
                         placeholder='email'
                         placeholderTextColor={theme.color.grey}
                         selectionColor={theme.color.yellow}
                     />
+                    {error?<DefaultText>{error}</DefaultText>:null}
                     <DefaultText fontSize={'thin'} >
                         al registrarse acepta las politicas y terminos de acuerdos de la plataforma
                     </DefaultText>
