@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
-import theme from "../../theme";
+import theme from "../../utils/theme";
 
 export default function ButtonLogin ({color,resOfProps,colorIcon,iconLeft,onPress}){
 

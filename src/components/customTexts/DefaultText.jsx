@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import theme from "../../theme";
+import theme from "../../utils/theme";
 
 
 export default function DefaultText ({children,color,fontSize,restOfProps}){

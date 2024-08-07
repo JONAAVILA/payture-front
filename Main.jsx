@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
-import Login from "./src/views/login/Login.jsx";
+import Login from "./src/views/Login.jsx";
 import { StatusBar } from "expo-status-bar";
-import theme from "./src/theme.jsx";
+import theme from "./src/utils/theme.js";
 import { NativeRouter, Route, Routes } from "react-router-native";
 import UserCreate from "./src/views/userCreate/UserCreate.jsx";
 
