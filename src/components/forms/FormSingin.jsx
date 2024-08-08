@@ -1,18 +1,17 @@
 import { StyleSheet, TextInput, View } from "react-native";
 import { URL_USER_EXIST } from '@env';
+import { Formik } from "formik";
+import { validateSingin } from "../../utils/validate";
+import { useNavigate } from "react-router-native";
+import { useState } from "react";
 import axios from "axios";
 import theme from "../../utils/theme";
 import HeadingText from "../customTexts/HeadingText";
 import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from "../buttons/ButtonLogin";
-import { Formik } from "formik";
-import { validateSingin } from "../../utils/validate";
-import { useNavigate } from "react-router-native";
-import { useState } from "react";
 
 export default function FormSingin (){
     const [ accessError,setAccessError ] = useState('')
-
     const navigate = useNavigate()
 
     return(
@@ -41,12 +40,14 @@ export default function FormSingin (){
                         placeholderTextColor={theme.color.grey}
                         selectionColor={theme.color.yellow}
                     />
+                    <View style={styles.error} >
                     {touched.email && errors.email && (
-                        <DefaultText fontSize={'thin'} color={'red'} >{errors.email}</DefaultText>
+                            <DefaultText fontSize={'thin'} color={'red'} >{errors.email}</DefaultText>
                     )}
                     {accessError && (
-                        <DefaultText fontSize={'thin'} color={'red'} >{accessError}</DefaultText>
+                            <DefaultText fontSize={'thin'} color={'red'} >{accessError}</DefaultText>
                     )}
+                    </View>
                     <DefaultText fontSize={'thin'} >
                         al registrarse acepta las politicas y terminos de acuerdos de la plataforma
                     </DefaultText>
@@ -78,5 +79,14 @@ const styles = StyleSheet.create({
         marginTop:5,
         padding:8,
         color:theme.color.white
+    },
+    error:{
+        flexDirection:'row',
+        alignContent:'center',
+        justifyContent:'left',
+        paddingLeft:2,
+        height:10,
+        width:325,
+        marginTop:-35
     }
 })
