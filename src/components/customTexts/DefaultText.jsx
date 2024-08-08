@@ -9,6 +9,7 @@ export default function DefaultText ({children,color,fontSize,restOfProps}){
         fontSize === 'xsmall' && styles.xsmall,
         fontSize === 'thin' && styles.thin,
         color === 'yellow' && styles.yellow,
+        color === 'red' && styles.red
     ]
 
     return(
@@ -34,5 +35,8 @@ const styles = StyleSheet.create({
     },
     grey:{
         color:theme.color.grey
+    },
+    red:{
+        color:theme.color.red
     }
 })

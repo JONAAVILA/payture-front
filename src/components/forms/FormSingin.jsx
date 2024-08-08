@@ -32,17 +32,20 @@ export default function FormSingin (){
                     <TextInput
                         style={styles.input}
                         value={values.email}
-                        onChangeText={handleChange('email')}
+                        onChangeText={(text)=>{
+                            handleChange('email')(text)
+                            setAccessError('')
+                        }}
                         onBlur={handleBlur('email')}
                         placeholder='email'
                         placeholderTextColor={theme.color.grey}
                         selectionColor={theme.color.yellow}
                     />
                     {touched.email && errors.email && (
-                        <DefaultText>{errors.email}</DefaultText>
+                        <DefaultText fontSize={'thin'} color={'red'} >{errors.email}</DefaultText>
                     )}
                     {accessError && (
-                        <DefaultText fontSize={'thin'} >{accessError}</DefaultText>
+                        <DefaultText fontSize={'thin'} color={'red'} >{accessError}</DefaultText>
                     )}
                     <DefaultText fontSize={'thin'} >
                         al registrarse acepta las politicas y terminos de acuerdos de la plataforma

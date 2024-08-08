@@ -5,7 +5,8 @@ const theme = {
         blackGrey:'#2A2A2A',
         black:'#0B0B0B',
         yellow:'#FEFD8C',
-        green:'#5CAB8C'
+        green:'#5CAB8C',
+        red:'#e84d4d'
     },
     size:{
         thin:12,
