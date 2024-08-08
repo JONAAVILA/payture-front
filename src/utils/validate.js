@@ -1,8 +1,17 @@
-import Yup from 'yup';
+import * as Yup from 'yup';
 
-const schema = Yup.object().shape({
+export const validateLogin = Yup.object().shape({
     name:Yup.string()
-        .min(2,"error")
+        .min(3,"Nombre muy corto")
+        .max(50,'Nombre muy largo')
+        .required('El nombre es requerido'),
+    email:Yup.string()
+        .email('Email invalido')
+        .required('El email es requerido')
 })
 
-export default schema;
+export const validateSingin = Yup.object().shape({
+    email:Yup.string()
+    .email('Email invalido')
+    .required('El email es requerido')
+})

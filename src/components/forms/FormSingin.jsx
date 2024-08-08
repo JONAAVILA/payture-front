@@ -1,56 +1,56 @@
 import { StyleSheet, TextInput, View } from "react-native";
-import { useNavigate } from "react-router-native";
-import { useState } from "react";
 import { URL_USER_EXIST } from '@env';
 import axios from "axios";
 import theme from "../../utils/theme";
 import HeadingText from "../customTexts/HeadingText";
 import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from "../buttons/ButtonLogin";
+import { Formik } from "formik";
+import { validateSingin } from "../../utils/validate";
+import { useNavigate } from "react-router-native";
+import { useState } from "react";
 
 export default function FormSingin (){
-    const [ inputValue,setInputValue ] = useState("")
-    const [ error,setError ] = useState("")
+    const [ accessError,setAccessError ] = useState('')
+
     const navigate = useNavigate()
 
-    const handleInputValue = (text)=>{
-        if(text.length >= 1) setInputValue(text)
-        if(text.length === 0) setInputValue("")
-        setError("")
-    }
-   
-    const handleSubmit = async ()=>{
-        try {
-            const access = await axios.post(URL_USER_EXIST,{email:inputValue})
-            if(access.data === true){
-                 console.log(access.data);
-                 navigate('/usercreate')
-            }
-            setError("invalid email")
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
     return(
-        <View style={styles.box_singin} >    
-            <View style={styles.box_input_singin} >
-                <HeadingText fontSize='mediun' color={'yellow'} >Registrarse</HeadingText>
-                <TextInput
-                    style={styles.input}
-                    value={inputValue}
-                    onChangeText={handleInputValue}
-                    placeholder='email'
-                    placeholderTextColor={theme.color.grey}
-                    selectionColor={theme.color.yellow}
-                />
-                {error?<DefaultText>{error}</DefaultText>:null}
-                <DefaultText fontSize={'thin'} >
-                    al registrarse acepta las politicas y terminos de acuerdos de la plataforma
-                </DefaultText>
-            </View>
-            <ButtonLogin onPress={handleSubmit} color={'yellow'} colorIcon={'black'} />
-        </View>
+        <Formik initialValues={{email:''}}
+                validationSchema={validateSingin}
+                onSubmit={ async (values)=>{
+                    const access = await axios.post(URL_USER_EXIST,{email:values.email})
+                    console.log(access.data)
+                    if(access.data === false) setAccessError('El email ya existe')
+                    if(access.data === true) navigate('/usercreate')
+                }}
+                >
+            {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>(
+                <View style={styles.box_singin} >    
+                <View style={styles.box_input_singin} >
+                    <HeadingText fontSize='mediun' color={'yellow'} >Registrarse</HeadingText>
+                    <TextInput
+                        style={styles.input}
+                        value={values.email}
+                        onChangeText={handleChange('email')}
+                        onBlur={handleBlur('email')}
+                        placeholder='email'
+                        placeholderTextColor={theme.color.grey}
+                        selectionColor={theme.color.yellow}
+                    />
+                    {touched.email && errors.email && (
+                        <DefaultText>{errors.email}</DefaultText>
+                    )}
+                    {accessError && (
+                        <DefaultText fontSize={'thin'} >{accessError}</DefaultText>
+                    )}
+                    <DefaultText fontSize={'thin'} >
+                        al registrarse acepta las politicas y terminos de acuerdos de la plataforma
+                    </DefaultText>
+                </View>
+                <ButtonLogin onPress={handleSubmit} color={'yellow'} colorIcon={'black'} />
+            </View>)}
+        </Formik>
     )
 }
 

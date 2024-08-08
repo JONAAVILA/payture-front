@@ -2,29 +2,32 @@ import { StyleSheet, TextInput, View } from "react-native";
 import HeadingText from "../customTexts/HeadingText";
 import ButtonLogin from "../buttons/ButtonLogin";
 import theme from "../../utils/theme";
+import { Formik } from "formik";
 
 export default function FormLogin (){
     return(
-        <View style={styles.box_login} >    
-            <ButtonLogin iconLeft={'left'} />
-            <View style={styles.box_input} >
-                <HeadingText fontSize='mediun' >Ingresar</HeadingText>
-                <View style={styles.box_input_login} >
-                    <TextInput
-                        style={styles.input}
-                        placeholder='usuario'
-                        placeholderTextColor={theme.color.grey}
-                        selectionColor={theme.color.yellow}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        placeholder='constraseña'
-                        placeholderTextColor={theme.color.grey}
-                        selectionColor={theme.color.yellow}
-                    />
+        <Formik>
+            <View style={styles.box_login} >    
+                <ButtonLogin iconLeft={'left'} />
+                <View style={styles.box_input} >
+                    <HeadingText fontSize='mediun' >Ingresar</HeadingText>
+                    <View style={styles.box_input_login} >
+                        <TextInput
+                            style={styles.input}
+                            placeholder='usuario'
+                            placeholderTextColor={theme.color.grey}
+                            selectionColor={theme.color.yellow}
+                        />
+                        <TextInput
+                            style={styles.input}
+                            placeholder='constraseña'
+                            placeholderTextColor={theme.color.grey}
+                            selectionColor={theme.color.yellow}
+                        />
+                    </View>
                 </View>
             </View>
-        </View>
+        </Formik>
     )
 }
 
