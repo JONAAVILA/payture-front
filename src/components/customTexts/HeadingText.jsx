@@ -7,7 +7,8 @@ export default function HeadingText ({children,color,fontSize,restOfProps}){
     const styleText =[
         styles.text,
         fontSize === 'mediun' && styles.mediun,
-        color === 'yellow' && styles.yellow
+        color === 'yellow' && styles.yellow,
+        color === 'green' && styles.green
     ]
 
     return(
@@ -30,5 +31,8 @@ const styles = StyleSheet.create({
     },
     yellow:{
         color:theme.color.yellow
+    },
+    green:{
+        color:theme.color.green
     }
 })

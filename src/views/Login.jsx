@@ -10,7 +10,7 @@ export default function Login (){
     return(
         <View style={styles.container_login}>
             <View style={styles.box_tittle} >
-                <HeadingText>Bienvenido</HeadingText>
+                <HeadingText>Payture</HeadingText>
                 <DefaultText>La app que te da recompensas por crear contenido</DefaultText>
             </View>
             <FormLogin/>

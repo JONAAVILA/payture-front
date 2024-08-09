@@ -10,7 +10,7 @@ export default function FormLogin (){
             <View style={styles.box_login} >    
                 <ButtonLogin iconLeft={'left'} />
                 <View style={styles.box_input} >
-                    <HeadingText fontSize='mediun' >Ingresar</HeadingText>
+                    <HeadingText fontSize='mediun' color={'grey'} >Ingresar</HeadingText>
                     <View style={styles.box_input_login} >
                         <TextInput
                             style={styles.input}

@@ -6,7 +6,7 @@ export default function ButtonLogin ({color,resOfProps,colorIcon,iconLeft,onPres
 
     const buttonStyle = [
         styles.button,
-        color === 'yellow' && styles.yellow,
+        color === 'red' && styles.red,
     ]
 
     const iconStyle = [
@@ -30,15 +30,15 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center',
         backgroundColor:theme.color.blackGrey,
-        borderRadius:10,
+        borderRadius:25,
         width:50,
         height:260,
     },
-    yellow:{
-        backgroundColor:theme.color.yellow
+    red:{
+        backgroundColor:theme.color.red
     },
     icon:{
-        color:theme.color.yellow
+        color:theme.color.red
     },
     iconBlack:{
         color:theme.color.black

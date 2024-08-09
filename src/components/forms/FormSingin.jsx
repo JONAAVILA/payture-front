@@ -26,34 +26,34 @@ export default function FormSingin (){
                 >
             {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>(
                 <View style={styles.box_singin} >    
-                <View style={styles.box_input_singin} >
-                    <HeadingText fontSize='mediun' color={'yellow'} >Registrarse</HeadingText>
-                    <TextInput
-                        style={styles.input}
-                        value={values.email}
-                        onChangeText={(text)=>{
-                            handleChange('email')(text)
-                            setAccessError('')
-                        }}
-                        onBlur={handleBlur('email')}
-                        placeholder='email'
-                        placeholderTextColor={theme.color.grey}
-                        selectionColor={theme.color.yellow}
-                    />
-                    <View style={styles.error} >
-                    {touched.email && errors.email && (
-                            <DefaultText fontSize={'thin'} color={'red'} >{errors.email}</DefaultText>
-                    )}
-                    {accessError && (
-                            <DefaultText fontSize={'thin'} color={'red'} >{accessError}</DefaultText>
-                    )}
+                    <View style={styles.box_input_singin} >
+                        <HeadingText fontSize='mediun' color={'green'} >Registrarse</HeadingText>
+                        <TextInput
+                            style={styles.input}
+                            value={values.email}
+                            onChangeText={(text)=>{
+                                handleChange('email')(text)
+                                setAccessError('')
+                            }}
+                            onBlur={handleBlur('email')}
+                            placeholder='email'
+                            placeholderTextColor={theme.color.grey}
+                            selectionColor={theme.color.yellow}
+                        />
+                        <View style={styles.error} >
+                        {touched.email && errors.email && (
+                                <DefaultText fontSize={'thin'} color={'red'} >{errors.email}</DefaultText>
+                        )}
+                        {accessError && (
+                                <DefaultText fontSize={'thin'} color={'red'} >{accessError}</DefaultText>
+                        )}
+                        </View>
+                        <DefaultText fontSize={'thin'} >
+                            al registrarse acepta las politicas y terminos de acuerdos de la plataforma
+                        </DefaultText>
                     </View>
-                    <DefaultText fontSize={'thin'} >
-                        al registrarse acepta las politicas y terminos de acuerdos de la plataforma
-                    </DefaultText>
-                </View>
-                <ButtonLogin onPress={handleSubmit} color={'yellow'} colorIcon={'black'} />
-            </View>)}
+                    <ButtonLogin onPress={handleSubmit} color={'red'} colorIcon={'black'} />
+                </View>)}
         </Formik>
     )
 }
