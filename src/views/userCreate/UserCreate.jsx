@@ -1,6 +1,5 @@
-import { Modal, Pressable, ScrollView, StyleSheet, TextInput, View } from "react-native";
+import { Modal, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import HeadingText from "../../components/customTexts/HeadingText";
-import AntDesign from '@expo/vector-icons/AntDesign';
 import { useNavigate } from "react-router-native";
 import theme from "../../utils/theme";
 import { Formik } from "formik";
@@ -8,6 +7,7 @@ import { validateUser } from "../../utils/validate";
 import ButtonLogin from "../../components/buttons/ButtonLogin";
 import DefaultText from "../../components/customTexts/DefaultText";
 import { useState } from "react";
+import Navbar from "../../components/Navbar";
 
 
 export default function UserCreate (){
@@ -16,9 +16,7 @@ export default function UserCreate (){
 
     return(
         <View style={styles.container_create} >
-            <Pressable>
-                <AntDesign onPress={()=>navigate('/')} name="arrowleft" size={30} color="white"/>
-            </Pressable>
+            <Navbar paht={'/'}/>
             <ScrollView>
                 <View style={styles.heading_account} >
                     <HeadingText>Crear Cuenta</HeadingText>
