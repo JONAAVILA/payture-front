@@ -1,6 +1,7 @@
 
 import React, { useCallback } from 'react';
 import { Outfit_400Regular,Outfit_500Medium, useFonts } from '@expo-google-fonts/outfit';
+import { Pacifico_400Regular } from '@expo-google-fonts/pacifico';
 import * as SplashScreen from 'expo-splash-screen';
 import Main from './Main.jsx';
 
@@ -10,7 +11,8 @@ export default function App() {
 
   let [fontsLoaded] = useFonts({
     Outfit_400Regular,
-    Outfit_500Medium
+    Outfit_500Medium,
+    Pacifico_400Regular
   })
 
   const onLayoutRootView = useCallback(async () => {

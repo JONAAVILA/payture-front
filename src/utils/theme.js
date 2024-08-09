@@ -19,7 +19,8 @@ const theme = {
     },
     fontFamily:{
         regular:'Outfit_400Regular',
-        mediun:'Outfit_500Medium'
+        mediun:'Outfit_500Medium',
+        pacifico:'Pacifico_400Regular',
     }
 }
 

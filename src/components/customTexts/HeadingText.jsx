@@ -2,11 +2,12 @@ import { StyleSheet, Text, View } from "react-native";
 import theme from "../../utils/theme";
 
 
-export default function HeadingText ({children,color,fontSize,restOfProps}){
+export default function HeadingText ({children,color,fontSize,fontFamily,restOfProps}){
 
     const styleText =[
         styles.text,
         fontSize === 'mediun' && styles.mediun,
+        fontFamily === 'pacifico' && styles.pacifico,
         color === 'yellow' && styles.yellow,
         color === 'green' && styles.green
     ]
@@ -34,5 +35,8 @@ const styles = StyleSheet.create({
     },
     green:{
         color:theme.color.green
+    },
+    pacifico:{
+        fontFamily:theme.fontFamily.pacifico
     }
 })
