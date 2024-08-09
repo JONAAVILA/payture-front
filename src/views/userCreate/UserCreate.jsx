@@ -21,7 +21,7 @@ export default function UserCreate (){
             </Pressable>
             <ScrollView>
                 <View style={styles.heading_account} >
-                    <HeadingText color={'green'} >Crear Cuenta</HeadingText>
+                    <HeadingText>Crear Cuenta</HeadingText>
                     <DefaultText fontSize={'xsmall'} >en solo unos simples pasos podes crear tu cuenta</DefaultText>
                 </View>
                     <View>
@@ -37,7 +37,7 @@ export default function UserCreate (){
                                 <View>
                                     <View style={styles.box_create_input}  >
                                         <View style={styles.heading_input} >
-                                            <HeadingText fontSize={'mediun'} color={'grey'} >Usuario</HeadingText>
+                                            <HeadingText fontSize={'mediun'} color={'green'} >Usuario</HeadingText>
                                         </View>
                                         <View>
                                             <TextInput style={styles.input}
@@ -72,7 +72,7 @@ export default function UserCreate (){
                                         <View style={styles.container_token} >
                                             <View  style={styles.box_input_token} >
                                                 <View style={styles.heading_input_token} >
-                                                    <HeadingText fontSize={'mediun'} color={'yellow'} >Token</HeadingText>
+                                                    <HeadingText fontSize={'mediun'} color={'green'} >Token</HeadingText>
                                                 </View>
                                                 <TextInput style={styles.input}
                                                         placeholderTextColor={theme.color.grey}
@@ -83,7 +83,7 @@ export default function UserCreate (){
                                                     <DefaultText fontSize={'xsmall'} >Valida el token ingrear el código que te vamos a enviar a tu email</DefaultText>
                                                 </View>
                                             </View>
-                                            <ButtonLogin/>
+                                            <ButtonLogin onPress={()=>navigate('/home')} />
                                         </View>
                                     </Modal>
                                 </View>
