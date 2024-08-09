@@ -7,14 +7,12 @@ import { Formik } from "formik";
 import { validateUser } from "../../utils/validate";
 import ButtonLogin from "../../components/buttons/ButtonLogin";
 import DefaultText from "../../components/customTexts/DefaultText";
+import { useState } from "react";
 
 
 export default function UserCreate (){
+    const [ modalVisible,setModalVisible ] = useState(false)
     const navigate = useNavigate()
-
-    const modalVisible = ()=>{
-        
-    }
 
     return(
         <View style={styles.container_create} >
@@ -62,6 +60,9 @@ export default function UserCreate (){
                                                     selectionColor={theme.color.yellow}
                                                     placeholder="Contraseña"
                                                     />
+                                        </View>
+                                        <View style={styles.button_horizontal} >
+                                            <ButtonLogin onPress={()=>setModalVisible(true)} color={'red'} horizontal={'horizontal'} colorIcon={'black'} ></ButtonLogin>
                                         </View>
                                     </View>
                                     <Modal transparent={true}
@@ -120,6 +121,11 @@ const styles = StyleSheet.create({
     heading_input:{
         marginTop:25,
         marginBottom:10
+    },
+    button_horizontal:{
+        flex:1,
+        alignItems:'center',
+        marginTop:25
     },
     container_token:{
         flex:1,

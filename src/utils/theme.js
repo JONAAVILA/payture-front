@@ -15,7 +15,7 @@ const theme = {
         xsmall:15,
         small:18,
         mediun:35,
-        large:60
+        large:50
     },
     fontFamily:{
         regular:'Outfit_400Regular',

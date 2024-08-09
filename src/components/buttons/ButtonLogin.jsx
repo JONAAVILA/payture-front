@@ -2,11 +2,12 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import theme from "../../utils/theme";
 
-export default function ButtonLogin ({color,resOfProps,colorIcon,iconLeft,onPress}){
+export default function ButtonLogin ({color,resOfProps,colorIcon,iconLeft,horizontal,onPress}){
 
     const buttonStyle = [
         styles.button,
         color === 'red' && styles.red,
+        horizontal === 'horizontal' && styles.horizontal
     ]
 
     const iconStyle = [
@@ -45,5 +46,9 @@ const styles = StyleSheet.create({
     },
     iconLeft:{
         transform: [{ rotate: '180deg' }],
+    },
+    horizontal:{
+        width:260,
+        height:50
     }
 })
