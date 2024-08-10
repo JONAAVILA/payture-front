@@ -66,10 +66,10 @@ const styles = StyleSheet.create({
     },
     box_input_singin:{
         backgroundColor:theme.color.blackGrey,
-        borderRadius:10,
+        borderRadius:25,
         marginRight:15,
         width:325,
-        padding:10, 
+        padding:15, 
         justifyContent:'space-around'
     },
     input:{

@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
     },
     box_input:{
         backgroundColor:theme.color.blackGrey,
-        borderRadius:10,
+        borderRadius:25,
         marginLeft:15,
         width:325,
-        padding:10
+        padding:15
     },
     box_input_login:{
         marginTop:30,

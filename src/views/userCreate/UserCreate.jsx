@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
     },
     box_create_input:{
         backgroundColor:theme.color.blackGrey,
-        borderRadius:10,
-        padding:10
+        borderRadius:25,
+        padding:15
     },
     input:{
         backgroundColor:theme.color.black,
@@ -135,8 +135,8 @@ const styles = StyleSheet.create({
     },
     box_input_token:{
         justifyContent:'space-around',
-        borderRadius:10,
-        padding:10,
+        borderRadius:25,
+        padding:15,
         marginRight:15,
         height:260,
         width:335,
