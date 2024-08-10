@@ -99,12 +99,15 @@ const styles = StyleSheet.create({
         backgroundColor:theme.color.black
     },
     box_create_input:{
-        backgroundColor:theme.color.blackGrey,
+        borderColor:theme.color.blackGrey,
+        borderWidth:1,
         borderRadius:25,
         padding:15
     },
     input:{
         backgroundColor:theme.color.black,
+        borderColor:theme.color.blackGrey,
+        borderWidth:1,
         height:50,
         borderRadius:10,
         marginTop:5,
@@ -131,15 +134,18 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'flex-end',
         justifyContent:'center',
+        height:300,
         backgroundColor:theme.color.black99
     },
     box_input_token:{
+        borderColor:theme.color.blackGrey,
+        borderWidth:1,
         justifyContent:'space-around',
         borderRadius:25,
         padding:15,
         marginRight:15,
         height:260,
         width:335,
-        backgroundColor:theme.color.blackGrey
+        backgroundColor:theme.color.black
     }
 })

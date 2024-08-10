@@ -37,7 +37,7 @@ export default function FormSingin (){
                             }}
                             onBlur={handleBlur('email')}
                             placeholder='email'
-                            placeholderTextColor={theme.color.grey}
+                            placeholderTextColor={theme.color.white}
                             selectionColor={theme.color.yellow}
                         />
                         <View style={styles.error} >
@@ -65,7 +65,8 @@ const styles = StyleSheet.create({
         width:400,
     },
     box_input_singin:{
-        backgroundColor:theme.color.blackGrey,
+        borderColor:theme.color.blackGrey,
+        borderWidth:1,
         borderRadius:25,
         marginRight:15,
         width:325,
@@ -73,7 +74,8 @@ const styles = StyleSheet.create({
         justifyContent:'space-around'
     },
     input:{
-        backgroundColor:theme.color.black,
+        borderColor:theme.color.blackGrey,
+        borderWidth:1,
         height:50,
         borderRadius:10,
         marginTop:5,

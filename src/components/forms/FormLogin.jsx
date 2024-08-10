@@ -15,13 +15,13 @@ export default function FormLogin (){
                         <TextInput
                             style={styles.input}
                             placeholder='usuario'
-                            placeholderTextColor={theme.color.grey}
+                            placeholderTextColor={theme.color.white}
                             selectionColor={theme.color.yellow}
                         />
                         <TextInput
                             style={styles.input}
                             placeholder='constraseña'
-                            placeholderTextColor={theme.color.grey}
+                            placeholderTextColor={theme.color.white}
                             selectionColor={theme.color.yellow}
                         />
                     </View>
@@ -38,7 +38,8 @@ const styles = StyleSheet.create({
         width:400,
     },
     box_input:{
-        backgroundColor:theme.color.blackGrey,
+        borderColor:theme.color.blackGrey,
+        borderWidth:1,
         borderRadius:25,
         marginLeft:15,
         width:325,
@@ -49,7 +50,8 @@ const styles = StyleSheet.create({
         justifyContent:'center',
     },
     input:{
-        backgroundColor:theme.color.black,
+        borderColor:theme.color.blackGrey,
+        borderWidth:1,
         height:50,
         borderRadius:10,
         marginTop:5,
