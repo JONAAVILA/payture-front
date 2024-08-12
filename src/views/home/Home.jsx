@@ -2,6 +2,7 @@ import { ScrollView, StyleSheet, View } from "react-native";
 import HeadingText from "../../components/customTexts/HeadingText";
 import Navbar from "../../components/Navbar";
 import Publications from "../../components/cards/Publications";
+import Menu from "../../components/Menu";
 
 export default function Home (){
     return(
@@ -16,6 +17,7 @@ export default function Home (){
                 <Publications/>
                 <Publications/>
             </ScrollView>
+            <Menu/>
         </View>
     )
 }
