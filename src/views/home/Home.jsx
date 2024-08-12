@@ -3,6 +3,7 @@ import HeadingText from "../../components/customTexts/HeadingText";
 import Navbar from "../../components/Navbar";
 import Publications from "../../components/cards/Publications";
 import Menu from "../../components/Menu";
+import History from "../../components/cards/History";
 
 export default function Home (){
     return(
@@ -17,6 +18,13 @@ export default function Home (){
                 <Publications/>
                 <Publications/>
             </ScrollView>
+            <ScrollView horizontal={true} style={styles.box_history}>
+                <History/>
+                <History/>
+                <History/>
+                <History/>
+                <History/>
+            </ScrollView>
             <Menu/>
         </View>
     )
@@ -30,5 +38,9 @@ const styles = StyleSheet.create({
     },
     payture:{
         marginBottom:15
+    },
+    box_history:{
+        paddingHorizontal:5,
+        height:350
     }
 })
