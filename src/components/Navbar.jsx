@@ -9,9 +9,9 @@ export default function Navbar ({paht}){
     return(
         <View style={styles.container_nav} >
             <Pressable>
-                <AntDesign onPress={()=>navigate(paht)} name="arrowleft" size={30} color="white"/>
+                <AntDesign onPress={()=>navigate(paht)} name="arrowleft" size={24} color="white"/>
             </Pressable>
-                <MaterialIcons name="notifications-none" size={30} color="white" />
+                <MaterialIcons name="notifications-none" size={24} color="white" />
         </View>
     )
 }

@@ -10,7 +10,7 @@ export default function Home (){
         <View style={styles.container_home} >
             <Navbar paht={'/usercreate'} />
             <View style={styles.payture} >
-                <HeadingText fontFamily={'pacifico'} color={'green'} >Payture</HeadingText>
+                <HeadingText fontSize={'mediun'} fontFamily={'pacifico'} color={'green'} >Payture</HeadingText>
             </View>
             <ScrollView>
                 <Publications/>
@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     payture:{
-        marginBottom:15
+        marginBottom:5
     },
     box_history:{
         paddingHorizontal:5,
-        height:350
+        height:360,
     }
 })
