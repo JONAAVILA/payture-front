@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar";
 import Publications from "../../components/cards/Publications";
 import Menu from "../../components/Menu";
 import History from "../../components/cards/History";
+import ArrowMenu from '../../components/buttons/pressIcons/ArrowMenu'
 
 export default function Home (){
     return(
@@ -18,6 +19,7 @@ export default function Home (){
                 <Publications/>
                 <Publications/>
             </ScrollView>
+            <ArrowMenu/>
             <ScrollView horizontal={true} style={styles.box_history}>
                 <History/>
                 <History/>

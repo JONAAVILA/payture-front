@@ -10,7 +10,7 @@ export default function Main ({onLayout}){
     return(
         <NativeRouter>
             <View style={styles.container} onLayout={onLayout} >
-                <StatusBar style='light' />
+                <StatusBar style='light' backgroundColor={theme.color.black} />
                 <Routes>
                     <Route exact path="/" element={<Login/>}/>
                     <Route path="/usercreate" element={<UserCreate/>} />

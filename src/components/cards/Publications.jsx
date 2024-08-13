@@ -1,4 +1,4 @@
-import { Image, StyleSheet, TextInput, TouchableOpacity, View } from "react-native"
+import { Image, StyleSheet, TextInput, Pressable, View } from "react-native"
 import DefaultText from "../customTexts/DefaultText"
 import Entypo from '@expo/vector-icons/Entypo';
 import Feather from '@expo/vector-icons/Feather';
@@ -7,7 +7,7 @@ import theme from "../../utils/theme";
 
 export default function Publications (){
     return(
-        <TouchableOpacity>
+        <Pressable>
             <View style={styles.container_card} >
                 <Image style={styles.description_image} source={require('../../../assets/image.png')}/>
                 <View  style={styles.shadow} />
@@ -30,7 +30,7 @@ export default function Publications (){
                     </View>
                 </View>
             </View> 
-        </TouchableOpacity>
+        </Pressable>
     )
 }
 

@@ -1,4 +1,4 @@
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, Pressable, View } from "react-native";
 import DefaultText from "../customTexts/DefaultText";
 import theme from "../../utils/theme";
 
@@ -6,7 +6,7 @@ import theme from "../../utils/theme";
 export default function History (){
 
     return(
-        <TouchableOpacity>
+        <Pressable>
             <View style={styles.container_history} >
                 <Image style={styles.image} source={require('../../../assets/profile.png')}/>
                 <View  style={styles.shadow} />
@@ -19,7 +19,7 @@ export default function History (){
                     </View>
                 </View>
             </View>
-        </TouchableOpacity>
+        </Pressable>
     )
 }
 
