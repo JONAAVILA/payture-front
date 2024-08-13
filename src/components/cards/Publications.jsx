@@ -22,14 +22,13 @@ export default function Publications (){
                     </View>
                     <Entypo name="dots-three-vertical" size={24} color="white" />
                 </View>
-                {/* <View style={styles.description} >
+                <View style={styles.description} >
                     <DefaultText fontSize={'thin'} >Lorem ipsum dolor sicia voluptasimos, velit, ab consequatur optio voluptas sit deserunt repudiandae perferendis cupiditate dolorem veritatis undequod illo?</DefaultText>
                     <View style={styles.box_input} >
-                        <TextInput style={styles.input} cursorColor={'white'} />
                         <Feather style={styles.icon_message} name="message-circle" size={24} color="white" />
                         <Feather name="heart" size={24} color="white" />
                     </View>
-                </View> */}
+                </View>
             </View> 
         </TouchableOpacity>
     )
@@ -81,8 +80,9 @@ const styles = StyleSheet.create({
     },
     box_input:{
         flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent:'left',
+        alignItems:'center',
+        marginVertical:5,
     },
     input:{
         borderColor:theme.color.white,
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
         marginVertical:5
     },
     icon_message:{
-        marginLeft:-30,
-        marginRight:10
+        width:30,
     }
 })
