@@ -2,14 +2,15 @@ import { StyleSheet, Text, View } from "react-native";
 import theme from "../../utils/theme";
 
 
-export default function DefaultText ({children,color,fontSize,restOfProps}){
+export default function DefaultText ({children,color,fontSize,fontWeigth,restOfProps}){
 
     const styleText =[
         styles.text,
         fontSize === 'xsmall' && styles.xsmall,
         fontSize === 'thin' && styles.thin,
         color === 'yellow' && styles.yellow,
-        color === 'red' && styles.red
+        color === 'red' && styles.red,
+        fontWeigth === 'bold' && styles.bold
     ]
 
     return(
@@ -38,5 +39,8 @@ const styles = StyleSheet.create({
     },
     red:{
         color:theme.color.red
+    },
+    bold:{
+        fontFamily:theme.fontFamily.mediun
     }
 })

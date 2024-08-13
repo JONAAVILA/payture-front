@@ -15,7 +15,7 @@ export default function Publications (){
                     <View style={styles.head} >
                         <Image style={styles.prfile}  source={require('../../../assets/profile.png')} />
                         <View style={styles.profile_info} >
-                            <DefaultText fontSize={'xsmall'} >Jona_g</DefaultText>
+                            <DefaultText fontSize={'xsmall'} fontWeigth={'bold'} >Jona_g</DefaultText>
                             <DefaultText fontSize={'thin'} >Argentina</DefaultText>
                             <DefaultText fontSize={'thin'} >14K</DefaultText>
                         </View>
