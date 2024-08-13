@@ -6,6 +6,10 @@ import Menu from "../../components/Menu";
 import History from "../../components/cards/History";
 import ArrowMenu from '../../components/buttons/pressIcons/ArrowMenu'
 
+import image from '../../../assets/image.png'
+import image2 from '../../../assets/image2.png'
+import image3 from '../../../assets/image3.png'
+
 export default function Home (){
     return(
         <View style={styles.container_home} >
@@ -14,10 +18,10 @@ export default function Home (){
                 <HeadingText fontSize={'mediun'} fontFamily={'pacifico'} color={'green'} >Payture</HeadingText>
             </View>
             <ScrollView>
-                <Publications/>
-                <Publications/>
-                <Publications/>
-                <Publications/>
+                <Publications image={image} />
+                <Publications image={image2} />
+                <Publications image={image3} />
+                <Publications image={image} />
             </ScrollView>
             <ArrowMenu/>
             <ScrollView horizontal={true} style={styles.box_history}>

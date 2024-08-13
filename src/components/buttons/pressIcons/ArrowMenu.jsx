@@ -5,7 +5,7 @@ import theme from '../../../utils/theme';
 export default function ArrowMenu (){
     return(
         <Pressable>
-            <MaterialIcons name="keyboard-arrow-down" size={35} color={theme.color.red} />
+            <MaterialIcons name="keyboard-arrow-down" size={40} color={theme.color.red} />
         </Pressable>
     )
 }

@@ -5,11 +5,11 @@ import Feather from '@expo/vector-icons/Feather';
 import theme from "../../utils/theme";
 
 
-export default function Publications (){
+export default function Publications ({image}){
     return(
         <Pressable>
             <View style={styles.container_card} >
-                <Image style={styles.description_image} source={require('../../../assets/image.png')}/>
+                <Image style={styles.description_image} source={image}/>
                 <View  style={styles.shadow} />
                 <View style={styles.box_head}  >
                     <View style={styles.head} >
