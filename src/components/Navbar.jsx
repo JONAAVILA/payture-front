@@ -1,7 +1,7 @@
 import { Image, Pressable, StyleSheet, View } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useNavigate } from "react-router-native";
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Notification from "./buttons/pressIcons/Notification";
 
 export default function Navbar ({paht}){
     const navigate = useNavigate()
@@ -12,7 +12,7 @@ export default function Navbar ({paht}){
                 <AntDesign onPress={()=>navigate(paht)} name="arrowleft" size={24} color="white"/>
             </Pressable>
             <View style={styles.box_profile} >
-                <MaterialIcons name="notifications-none" size={24} color="white" />
+                <Notification/>
                 <Image style={styles.profile} source={require('../../assets/profile.png')} />
             </View>
         </View>
