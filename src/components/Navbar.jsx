@@ -2,18 +2,24 @@ import { Image, Pressable, StyleSheet, View } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useNavigate } from "react-router-native";
 import Notification from "./buttons/pressIcons/Notification";
+import HeadingText from "./customTexts/HeadingText";
 
 export default function Navbar ({paht}){
     const navigate = useNavigate()
 
     return(
-        <View style={styles.container_nav} >
-            <Pressable>
-                <AntDesign onPress={()=>navigate(paht)} name="arrowleft" size={24} color="white"/>
-            </Pressable>
-            <View style={styles.box_profile} >
-                <Notification/>
-                <Image style={styles.profile} source={require('../../assets/profile.png')} />
+        <View>
+            <View style={styles.container_nav} >
+                <Pressable>
+                    <AntDesign onPress={()=>navigate(paht)} name="arrowleft" size={24} color="white"/>
+                </Pressable>
+                <View style={styles.box_profile} >
+                    <Notification/>
+                    <Image style={styles.profile} source={require('../../assets/profile.png')} />
+                </View>
+            </View>
+            <View style={styles.payture} >
+                <HeadingText fontSize={'mediun'} fontFamily={'pacifico'} color={'green'} >Payture</HeadingText>
             </View>
         </View>
     )
@@ -36,5 +42,10 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'center',
         alignItems:'center'
-    }
+    },
+    payture:{
+        marginBottom:5,
+        alignItems:'center',
+        marginTop:-15
+    },
 })
