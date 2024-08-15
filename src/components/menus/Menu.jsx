@@ -3,7 +3,7 @@ import Feather from '@expo/vector-icons/Feather';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Fontisto from '@expo/vector-icons/Fontisto';
-import theme from "../utils/theme";
+import theme from "../../utils/theme";
 
 export default function Menu (){
     return(

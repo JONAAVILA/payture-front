@@ -1,8 +1,8 @@
 import { Image, Pressable, StyleSheet, View } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useNavigate } from "react-router-native";
-import Notification from "./buttons/pressIcons/Notification";
-import HeadingText from "./customTexts/HeadingText";
+import Notification from '../buttons/pressIcons/Notification';
+import HeadingText from '../customTexts/HeadingText';
 
 export default function Navbar ({paht}){
     const navigate = useNavigate()
@@ -15,7 +15,7 @@ export default function Navbar ({paht}){
                 </Pressable>
                 <View style={styles.box_profile} >
                     <Notification/>
-                    <Image style={styles.profile} source={require('../../assets/profile.png')} />
+                    <Image style={styles.profile} source={require('../../../assets/profile.png')} />
                 </View>
             </View>
             <View style={styles.payture} >

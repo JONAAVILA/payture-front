@@ -7,7 +7,7 @@ import { validateUser } from "../../utils/validate";
 import ButtonLogin from "../../components/buttons/ButtonLogin";
 import DefaultText from "../../components/customTexts/DefaultText";
 import { useState } from "react";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/menus/Navbar";
 
 
 export default function UserCreate (){

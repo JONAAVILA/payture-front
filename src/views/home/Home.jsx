@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
-import Navbar from "../../components/Navbar";
-import Menu from "../../components/Menu";
+import Navbar from "../../components/menus/Navbar";
+import Menu from "../../components/menus/Menu";
 import StoryLine from "../StoryLine";
 import PostLine from "../PostLine";
 
