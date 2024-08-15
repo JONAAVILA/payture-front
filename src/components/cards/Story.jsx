@@ -3,7 +3,7 @@ import DefaultText from "../customTexts/DefaultText";
 import theme from "../../utils/theme";
 
 
-export default function History (){
+export default function Story (){
 
     return(
         <Pressable>

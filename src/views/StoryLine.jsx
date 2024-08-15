@@ -1,6 +1,6 @@
 import { AnimatePresence, MotiView, ScrollView, View } from "moti";
 import { StyleSheet } from "react-native";
-import History from '../components/cards/History';
+import Story from '../components/cards/Story';
 import ArrowMenu from '../components/buttons/pressIcons/ArrowMenu';
 import { useState } from "react";
 
@@ -33,13 +33,13 @@ export default function StoryLine (){
                                     style={styles.box_history}
                                     >
                     <ScrollView horizontal={true}>
-                        <History/>
-                        <History/>
-                        <History/>
-                        <History/>
-                        <History/>
-                        <History/>
-                        <History/>
+                        <Story/>
+                        <Story/>
+                        <Story/>
+                        <Story/>
+                        <Story/>
+                        <Story/>
+                        <Story/>
                     </ScrollView>
                 </MotiView>}
             </AnimatePresence>
