@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-native";
 import Notification from '../buttons/pressIcons/Notification';
 import HeadingText from '../customTexts/HeadingText';
 
-export default function Navbar ({paht}){
+export default function Navbar ({paht,pathProfile}){
     const navigate = useNavigate()
 
     return(
@@ -15,7 +15,9 @@ export default function Navbar ({paht}){
                 </Pressable>
                 <View style={styles.box_profile} >
                     <Notification/>
-                    <Image style={styles.profile} source={require('../../../assets/profile.png')} />
+                    <Pressable onPress={()=>navigate(pathProfile)} >
+                        <Image style={styles.profile} source={require('../../../assets/profile.png')} />
+                    </Pressable>
                 </View>
             </View>
             <View style={styles.payture} >

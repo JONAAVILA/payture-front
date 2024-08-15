@@ -5,6 +5,7 @@ import theme from "./src/utils/theme.js";
 import { NativeRouter, Route, Routes } from "react-router-native";
 import UserCreate from "./src/views/userCreate/UserCreate.jsx";
 import Home from "./src/views/home/Home.jsx";
+import Profile from "./src/views/Profile.jsx";
 
 export default function Main ({onLayout}){
     return(
@@ -15,6 +16,7 @@ export default function Main ({onLayout}){
                     <Route exact path="/" element={<Login/>}/>
                     <Route path="/usercreate" element={<UserCreate/>} />
                     <Route path="/home" element={<Home/>}/>
+                    <Route path="/profile" element={<Profile/>} />
                 </Routes>
             </View>
         </NativeRouter>

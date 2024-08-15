@@ -9,7 +9,8 @@ export default function HeadingText ({children,color,fontSize,fontFamily,restOfP
         fontSize === 'mediun' && styles.mediun,
         fontFamily === 'pacifico' && styles.pacifico,
         color === 'yellow' && styles.yellow,
-        color === 'green' && styles.green
+        color === 'green' && styles.green,
+        color === 'white' && styles.white
     ]
 
     return(
@@ -38,5 +39,8 @@ const styles = StyleSheet.create({
     },
     pacifico:{
         fontFamily:theme.fontFamily.pacifico
+    },
+    white:{
+        color:theme.color.white
     }
 })
