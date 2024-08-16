@@ -1,5 +1,5 @@
 import { ScrollView } from "moti";
-import Publications from "../components/cards/Publications";
+import Publications from "../components/cards/publications/Publications";
 
 import image from '../../assets/image.png'
 import image2 from '../../assets/image2.png'

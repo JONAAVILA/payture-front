@@ -1,0 +1,65 @@
+import { StyleSheet } from "react-native";
+import theme from "../../../utils/theme";
+
+export const styles = StyleSheet.create({
+    container_card:{
+        position:'relative',
+        overflow:'hidden',
+        justifyContent:'space-between',
+        width:400,
+        padding:10,
+ 
+    },
+    shadow:{
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor:theme.color.black80
+    },
+    box_head:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        paddingBottom:5
+    },
+    head:{
+        flexDirection:'row'
+    },
+    prfile:{
+        width:50,
+        height:50,
+        borderRadius:30,
+    },
+    profile_info:{
+        marginLeft:10,
+        justifyContent:'center',
+    },
+    description_image:{
+        position:'absolute',
+        width:400,
+        height:'100%',
+        padding:10,
+        justifyContent:'space-between'
+    },
+    description:{
+        marginBottom:20,
+        paddingHorizontal:5
+    },
+    box_input:{
+        flexDirection:'row',
+        justifyContent:'left',
+        alignItems:'center',
+        marginVertical:5,
+    },
+    input:{
+        borderColor:theme.color.white,
+        borderWidth:1,
+        borderRadius:25,
+        padding:10,
+        color:theme.color.white,
+        height:40,
+        width:340,
+        marginVertical:5
+    },
+    icon_message:{
+        width:30,
+    }
+})

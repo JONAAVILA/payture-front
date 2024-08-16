@@ -9,7 +9,7 @@ import image from '../../assets/profile.png'
 import theme from "../utils/theme";
 import Menu from "../components/menus/Menu";
 import StoryLine from "./StoryLine";
-import Publications from "../components/cards/Publications";
+import Publications from "../components/cards/publications/Publications";
 
 export default function Profile (){
     
