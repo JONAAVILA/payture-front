@@ -9,8 +9,7 @@ export default function StoryLine (){
     const [ visible,toggle ] = useState(false)
 
     const handleVisible = ()=>{
-        if(visible) toggle(false)
-        if(!visible) toggle(true)
+        toggle(!visible);
     }
 
     return(
