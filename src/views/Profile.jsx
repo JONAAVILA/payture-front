@@ -9,13 +9,14 @@ import image from '../../assets/profile.png'
 import theme from "../utils/theme";
 import Menu from "../components/menus/Menu";
 import StoryLine from "./StoryLine";
+import Publications from "../components/cards/Publications";
 
 export default function Profile (){
     
     return(
         <View style={styles.container_profile} >
             <Navbar paht={'/home'} />
-            <ScrollView>
+            <ScrollView style={styles.viewport} >
                 <View style={styles.box_profile}>
                     <Image style={styles.image_profile} source={image} />
                     <View  style={styles.shadow} />
@@ -24,12 +25,16 @@ export default function Profile (){
                         <DefaultText>Buenos Aires</DefaultText>
                         <DefaultText>Argentina</DefaultText>
                     </View>
-                    <Feather name="edit" size={24} color="white"/>
+                    <View>
+                        <Feather name="edit" size={24} color="white"/>
+                    </View>
                 </View>
                 <View style={styles.box_description} >
-                    <HeadingText color={'white'} >Relax 🌈</HeadingText>
-                    <DefaultText fontSize={'thin'} >Un texto es una composición de signos codificados en un sistema de escritura que forma una unidad de sentido.</DefaultText>
-                    <View style={styles.box_followers} >
+                    <View>
+                        <HeadingText color={'white'} >Relax 🌈</HeadingText>
+                        <DefaultText fontSize={'thin'} >Un texto es una composición de signos codificados en un sistema de escritura que forma una unidad de sentido.</DefaultText>
+                    </View>
+                    <View style={styles.box_stats} >
                         <View style={styles.stats} >
                             <DefaultText fontSize={'thin'} >5000</DefaultText>
                             <DefaultText fontSize={'thin'} >Followers</DefaultText>
@@ -44,6 +49,10 @@ export default function Profile (){
                         </View>
                     </View>
                 </View>
+                <Publications/>
+                <Publications/>
+                <Publications/>
+                <Publications/>
             </ScrollView>
             <StoryLine/>
             <Menu/>
@@ -53,35 +62,38 @@ export default function Profile (){
 
 const styles = StyleSheet.create({
     container_profile:{
-        marginTop:60
+        marginTop:60,
+        width:400,
+    },
+    viewport:{
+        height:600
     },
     box_profile:{
-        zIndex:-1,
-        position:'relative',
         overflow:'hidden',
-        height:400,
+        height:500,
         padding:10,
-        borderRadius:25,
+        borderRadius:30,
         flexDirection:'row',
         justifyContent:'space-between'
     },
     image_profile:{
         position:'absolute',
-        
+        height:500,
+        width:400
     },
     shadow:{
         position:'absolute',
         width:400,
-        height:400,
+        height:500,
         backgroundColor:theme.color.black80
     },
     box_description:{
-        zIndex:2,
-        position:'relative',
-        marginTop:-80,
+        marginTop:-100,
         padding:10
     },
-    box_followers:{
+    box_stats:{
+        width:'100',
+        marginTop:20,
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between'

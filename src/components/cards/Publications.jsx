@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     prfile:{
         width:50,
         height:50,
-        borderRadius:25,
+        borderRadius:30,
     },
     profile_info:{
         marginLeft:10,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         position:'absolute',
         width:400,
         height:320,
-        borderRadius:25,
+        borderRadius:30,
         paddingVertical:5
     },
     description:{
