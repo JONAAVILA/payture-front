@@ -24,7 +24,8 @@
     "react-native-dotenv": "^3.4.11",
     "react-router-native": "^6.26.0",
     "yup": "^1.4.0",
-    "react-native-reanimated": "~3.10.1"
+    "react-native-reanimated": "~3.10.1",
+    "expo-linear-gradient": "~13.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2"

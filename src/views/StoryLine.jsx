@@ -3,6 +3,8 @@ import { StyleSheet } from "react-native";
 import Story from '../components/cards/Story';
 import ArrowMenu from '../components/buttons/pressIcons/ArrowMenu';
 import { useState } from "react";
+import { LinearGradient } from "expo-linear-gradient";
+import theme from "../utils/theme";
 
 export default function StoryLine (){
 
@@ -42,6 +44,12 @@ export default function StoryLine (){
                     </ScrollView>
                 </MotiView>}
             </AnimatePresence>
+            <LinearGradient
+                colors={[theme.color.black,'transparent']}
+                start={{x:1,y:0}}
+                end={{x:0,y:0}}
+                style={styles.gradient}
+            />
         </View>
     )
 }
@@ -49,10 +57,20 @@ export default function StoryLine (){
 
 const styles = StyleSheet.create({
     container_story:{
-        alignItems:'center'
+        width:400,
+        alignItems:'center',
+        position:'relative',
+        overflow:'hidden'
     },
     box_history:{
         paddingHorizontal:5,
         overflow:'hidden'
+    },
+    gradient:{
+        position:'absolute',
+        right:0,
+        bottom:0,
+        height:'100%',
+        width:80
     }
 })

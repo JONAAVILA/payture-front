@@ -4,7 +4,6 @@ import HeadingText from "../components/customTexts/HeadingText";
 import DefaultText from "../components/customTexts/DefaultText";
 import Feather from '@expo/vector-icons/Feather';
 import { Image, StyleSheet } from "react-native";
-
 import image from '../../assets/profile.png'
 import theme from "../utils/theme";
 import Menu from "../components/menus/Menu";
