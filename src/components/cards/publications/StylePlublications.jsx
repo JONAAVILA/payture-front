@@ -3,22 +3,23 @@ import theme from "../../../utils/theme";
 
 export const styles = StyleSheet.create({
     container_card:{
-        position:'relative',
         overflow:'hidden',
         justifyContent:'space-between',
+        borderRadius:30,
         width:400,
-        padding:10,
- 
+        marginVertical:2
     },
     shadow:{
         ...StyleSheet.absoluteFillObject,
-        backgroundColor:theme.color.black80
+        backgroundColor:theme.color.black80,
+        borderRadius:30,
+        height:'100%',
     },
     box_head:{
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-        paddingBottom:5
+        padding:10
     },
     head:{
         flexDirection:'row'
@@ -36,12 +37,10 @@ export const styles = StyleSheet.create({
         position:'absolute',
         width:400,
         height:'100%',
-        padding:10,
         justifyContent:'space-between'
     },
     description:{
-        marginBottom:20,
-        paddingHorizontal:5
+        padding:10
     },
     box_input:{
         flexDirection:'row',
