@@ -3,8 +3,9 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { useNavigate } from "react-router-native";
 import Notification from '../buttons/pressIcons/Notification';
 import HeadingText from '../customTexts/HeadingText';
+import Feather from '@expo/vector-icons/Feather';
 
-export default function Navbar ({paht,pathProfile}){
+export default function Navbar ({paht,pathProfile,profile}){
     const navigate = useNavigate()
 
     return(
@@ -15,9 +16,20 @@ export default function Navbar ({paht,pathProfile}){
                 </Pressable>
                 <View style={styles.box_profile} >
                     <Notification/>
-                    <Pressable onPress={()=>navigate(pathProfile)} >
-                        <Image style={styles.profile} source={require('../../../assets/profile.png')} />
-                    </Pressable>
+                    <View style={styles.box_image_profile} >
+                        <Pressable onPress={()=>navigate(pathProfile)} >
+                        {!profile ?
+                            <Image 
+                                style={styles.image_profile} 
+                                source={require('../../../assets/profile.png')} 
+                            />:
+                            <Feather 
+                            name="settings"
+                            size={20}
+                            color="white"
+                            />}
+                        </Pressable>
+                    </View>
                 </View>
             </View>
             <View style={styles.payture} >
@@ -29,12 +41,19 @@ export default function Navbar ({paht,pathProfile}){
 
 const styles = StyleSheet.create({
     container_nav:{
-        alignItems:'flex-start',
+        alignItems:'center',
         flexDirection:'row',
         justifyContent:'space-between',
         width:400
     },
-    profile:{
+    box_image_profile:{
+        width:30,
+        height:30,
+        justifyContent:'center',
+        alignItems:'center',
+        marginLeft:10
+    },
+    image_profile:{
         width:30,
         height:30,
         borderRadius:20,

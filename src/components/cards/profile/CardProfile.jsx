@@ -18,7 +18,12 @@ export default function CardProfile (){
                     <DefaultText>Argentina</DefaultText>
                 </View>
                 <View>
-                    <Feather name="edit" size={24} color="white"/>
+                    <Feather 
+                        name="edit"
+                        margin={10} 
+                        size={20} 
+                        color="white"
+                    />
                 </View>
             </View>
             <View style={styles.box_description} >
