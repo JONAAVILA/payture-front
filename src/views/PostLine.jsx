@@ -7,7 +7,9 @@ import image3 from '../../assets/image3.png'
 
 export default function PostLine (){
     return(
-        <ScrollView>
+        <ScrollView
+            showsVerticalScrollIndicator={false}
+        >
             <Publications image={image} />
             <Publications image={image2} />
             <Publications image={image3} />

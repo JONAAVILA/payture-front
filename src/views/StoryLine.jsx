@@ -33,7 +33,10 @@ export default function StoryLine (){
                                     }}
                                     style={styles.box_history}
                                     >
-                    <ScrollView horizontal={true}>
+                    <ScrollView 
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    >
                         <Story/>
                         <Story/>
                         <Story/>
