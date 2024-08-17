@@ -9,6 +9,15 @@ export const styles = StyleSheet.create({
         width:400,
         marginVertical:2
     },
+    dots:{
+        position:'absolute',
+        width:400,
+        top:'50%',
+        paddingHorizontal:10,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between'
+    },
     shadow:{
         ...StyleSheet.absoluteFillObject,
         backgroundColor:theme.color.black80,
