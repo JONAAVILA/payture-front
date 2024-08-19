@@ -38,11 +38,11 @@ export default function Publications ({image}){
                         source={image}
                         style={styles.description_image}
                     >   
-                        <View  style={styles.shadow} />
                         {visible && <View style={styles.dots} >
                             <MaterialIcons name="arrow-back-ios" size={30} color="white" />
                             <MaterialIcons name="arrow-forward-ios" size={30} color="white" />
                         </View>}
+                        <View  style={styles.shadow} />
                         <View style={styles.box_head}  >
                             <View style={styles.head} >
                                 <Image style={styles.prfile}  source={require('../../../../assets/profile.png')} />

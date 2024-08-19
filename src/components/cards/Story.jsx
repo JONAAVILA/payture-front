@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         position:'absolute',
         width:110,
         height:160,
-        backgroundColor:theme.color.black80
+        backgroundColor:theme.color.black40
     },
     box_info:{
         height:150,

@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     },
     shadow:{
         ...StyleSheet.absoluteFillObject,
-        backgroundColor:theme.color.black80,
+        backgroundColor:theme.color.black40,
         borderRadius:30,
         height:'100%',
     },
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     },
     head:{
         flexDirection:'row'
-    },
+    },  
     prfile:{
         width:50,
         height:50,

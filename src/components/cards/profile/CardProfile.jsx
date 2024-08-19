@@ -10,9 +10,9 @@ export default function CardProfile (){
     return(
         <View>
             <View style={styles.box_profile}>
-                <Image style={styles.image_profile} source={image} />
                 <View  style={styles.shadow} />
-                <View>
+                <Image style={styles.image_profile} source={image} />
+                <View style={styles.head} >
                     <HeadingText color={'white'} >JOAQUIN</HeadingText>
                     <DefaultText>Buenos Aires</DefaultText>
                     <DefaultText>Argentina</DefaultText>
@@ -47,16 +47,23 @@ const styles = StyleSheet.create({
     },
     image_profile:{
         position:'absolute',
+        zIndex:1,
         height:500,
         width:400
     },
+    head:{
+        position:'relative',
+        zIndex:3
+    },
     shadow:{
         position:'absolute',
+        zIndex:2,
         width:400,
         height:500,
-        backgroundColor:theme.color.black80
+        backgroundColor:theme.color.black40
     },
     box_description:{
+        zIndex:3,
         marginTop:-100,
         padding:10
     }

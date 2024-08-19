@@ -4,7 +4,7 @@ const theme = {
         grey:'#838383',
         blackGrey:'#2A2A2A',
         black:'#0B0B0B',
-        black80:'#00000050',
+        black40:'#00000040',
         black99:'#00000099',
         yellow:'#FEFD8C',
         red:'#D74C4C',
