@@ -1,17 +1,15 @@
 import { StyleSheet, TextInput, View } from "react-native";
-import { URL_USER_EXIST } from '@env';
 import { Formik } from "formik";
 import { validateSingin } from "../../utils/validate";
 import { useNavigate } from "react-router-native";
 import { useState } from "react";
-import axios from "axios";
 import theme from "../../utils/theme";
 import HeadingText from "../customTexts/HeadingText";
 import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from "../buttons/ButtonLogin";
 import SingIn from '../../adapters/SingIn';
 
-export default function FormSingin (){
+export default function CheckEmail (){
     const [ accessError,setAccessError ] = useState('')
     const navigate = useNavigate()
 
@@ -89,6 +87,6 @@ const styles = StyleSheet.create({
         paddingLeft:2,
         height:10,
         width:325,
-        marginTop:-35
+        marginTop:-25
     }
 })

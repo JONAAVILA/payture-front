@@ -1,10 +1,10 @@
 import { AnimatePresence, MotiView, ScrollView, View } from "moti";
 import { StyleSheet } from "react-native";
-import Story from '../components/cards/Story';
-import ArrowMenu from '../components/buttons/pressIcons/ArrowMenu';
+import Story from '../../components/cards/Story';
+import ArrowMenu from '../../components/buttons/pressIcons/ArrowMenu';
 import { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import theme from "../utils/theme";
+import theme from "../../utils/theme";
 
 export default function StoryLine (){
 

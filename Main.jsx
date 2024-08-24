@@ -3,7 +3,7 @@ import Login from "./src/views/Login.jsx";
 import { StatusBar } from "expo-status-bar";
 import theme from "./src/utils/theme.js";
 import { NativeRouter, Route, Routes } from "react-router-native";
-import UserCreate from "./src/views/userCreate/UserCreate.jsx";
+import Create from "./src/views/create/users/Create.jsx";
 import Home from "./src/views/home/Home.jsx";
 import Profile from "./src/views/Profile.jsx";
 
@@ -14,7 +14,7 @@ export default function Main ({onLayout}){
                 <StatusBar style='light' backgroundColor={theme.color.black} />
                 <Routes>
                     <Route exact path="/" element={<Login/>}/>
-                    <Route path="/create" element={<UserCreate/>} />
+                    <Route path="/create" element={<Create/>} />
                     <Route path="/home" element={<Home/>}/>
                     <Route path="/profile" element={<Profile/>} />
                 </Routes>
