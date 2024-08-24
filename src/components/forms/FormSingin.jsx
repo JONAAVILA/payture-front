@@ -9,19 +9,19 @@ import theme from "../../utils/theme";
 import HeadingText from "../customTexts/HeadingText";
 import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from "../buttons/ButtonLogin";
+import SingIn from '../../adapters/SingIn';
 
 export default function FormSingin (){
     const [ accessError,setAccessError ] = useState('')
     const navigate = useNavigate()
 
-    return(
+    return( 
         <Formik initialValues={{email:''}}
                 validationSchema={validateSingin}
-                onSubmit={ async (values)=>{
-                    const access = await axios.post(URL_USER_EXIST,{email:values.email})
-                    console.log(access.data)
-                    if(access.data === false) setAccessError('El email ya existe')
-                    if(access.data === true) navigate('/usercreate')
+                onSubmit={async (values)=> {
+                    const access = await SingIn(values)
+                    if(access === true) navigate('/create')
+                    setAccessError('User exist')
                 }}
                 >
             {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>(

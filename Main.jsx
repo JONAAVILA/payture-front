@@ -14,7 +14,7 @@ export default function Main ({onLayout}){
                 <StatusBar style='light' backgroundColor={theme.color.black} />
                 <Routes>
                     <Route exact path="/" element={<Login/>}/>
-                    <Route path="/usercreate" element={<UserCreate/>} />
+                    <Route path="/create" element={<UserCreate/>} />
                     <Route path="/home" element={<Home/>}/>
                     <Route path="/profile" element={<Profile/>} />
                 </Routes>
