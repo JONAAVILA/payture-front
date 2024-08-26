@@ -1,12 +1,11 @@
-import { View } from "moti";
+import { Modal, StyleSheet, TextInput, View } from "react-native";
 import theme from "../../utils/theme";
-import { Modal, StyleSheet, TextInput } from "react-native";
 import HeadingText from "../customTexts/HeadingText";
 import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from "../buttons/ButtonLogin";
-import { useState } from "react";
+import { Formik } from "formik";
 
-export default function ModalToken ({visible}){
+export default function ModalCode ({visible,handleSubmit}){
     return(
         <Modal transparent={true}
                 animationType="slide"
@@ -17,16 +16,36 @@ export default function ModalToken ({visible}){
                     <View style={styles.heading_input_token} >
                         <HeadingText fontSize={'mediun'} color={'green'} >Token</HeadingText>
                     </View>
-                    <TextInput style={styles.input}
-                            placeholderTextColor={theme.color.grey}
-                            selectionColor={theme.color.yellow}
-                            placeholder="Token"
-                            />
+                    <Formik
+                        initialValues={{
+                            token:''
+                        }}
+                        onSubmit={''}
+                    >
+                    {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>{
+                        return(
+                            <>
+                                <TextInput 
+                                    style={styles.input}
+                                    value={values.token}
+                                    onChangeText={handleChange('token')}
+                                    onBlur={handleBlur('token')}
+                                    placeholderTextColor={theme.color.grey}
+                                    selectionColor={theme.color.yellow}
+                                    placeholder="Token"
+                                />
+                                {touched.token && errors.token && (
+                                    <DefaultText>{errors.token}</DefaultText>
+                                )}
+                            </>
+                        )
+                    }}
+                    </Formik>
                     <View style={styles.info_token} >
                         <DefaultText fontSize={'xsmall'} >Valida el token ingrear el código que te vamos a enviar a tu email</DefaultText>
                     </View>
                 </View>
-                <ButtonLogin onPress={()=>navigate('/home')} />
+                <ButtonLogin onPress={handleSubmit} />
             </View>
         </Modal>
     )

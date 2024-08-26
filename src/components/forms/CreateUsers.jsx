@@ -6,16 +6,20 @@ import theme from "../../utils/theme";
 import HeadingText from "../customTexts/HeadingText";
 import ButtonLogin from '../buttons/ButtonLogin';
 import { useState } from "react";
-import ModalToken from "../modals/ModalToken";
+import ModalCode from "../modals/ModalCode";
+import DefaultText from "../customTexts/DefaultText";
+import FechtCode from "../../adapters/FechtCode";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false)
+
     return(
         <View>
             <Formik initialValues={{
                     name:'',
-                    surname:'',
-                    email:''
+                    userName:'',
+                    email:'',
+                    password:''
                     }}
                     validationSchema={validateUser}
                     onSubmit={''}
@@ -28,34 +32,69 @@ export default function CreateUsers (){
                             </View>
                             <View>
                                 <TextInput style={styles.input}
+                                        value={values.name}
+                                        onChangeText={handleChange('name')}
+                                        onBlur={handleBlur('name')}
                                         placeholderTextColor={theme.color.grey}
                                         selectionColor={theme.color.yellow}
-                                        placeholder="Nombre"
+                                        placeholder="nombre"
                                         />
+                                {touched.name && errors.name && (
+                                    <DefaultText>{errors.name}</DefaultText>
+                                )}
                                 <TextInput style={styles.input}
+                                        value={values.userName}
+                                        onChangeText={handleChange('userName')}
+                                        onBlur={handleBlur('userName')}
                                         placeholderTextColor={theme.color.grey}
                                         selectionColor={theme.color.yellow}
-                                        placeholder="Nombre de usuario"
+                                        placeholder="nombre de usuario"
                                         />
+                                {touched.userName && errors.userName && (
+                                    <DefaultText>{errors.userName}</DefaultText>
+                                )}
                                 <TextInput style={styles.input}
+                                        value={values.email}
+                                        onChangeText={handleChange('email')}
+                                        onBlur={handleBlur('email')}
                                         placeholderTextColor={theme.color.grey}
                                         selectionColor={theme.color.yellow}
-                                        placeholder="Email"
+                                        placeholder="email"
                                         />
+                                {touched.email && errors.email && (
+                                    <DefaultText>{errors.email}</DefaultText>
+                                )}
                                 <TextInput style={styles.input}
+                                        value={values.password}
+                                        onChangeText={handleChange('password')}
+                                        onBlur={handleBlur('password')}
                                         placeholderTextColor={theme.color.grey}
                                         selectionColor={theme.color.yellow}
-                                        placeholder="Contraseña"
+                                        placeholder="contraseña"
                                         />
+                                {touched.password && errors.password && (
+                                    <DefaultText>{errors.password}</DefaultText>
+                                )}
                             </View>
                             <View style={styles.button_horizontal} >
-                                <ButtonLogin onPress={()=>setVisible(true)} color={'red'} horizontal={'horizontal'} colorIcon={'black'} ></ButtonLogin>
+                                <ButtonLogin 
+                                    onPress={
+                                        async ()=>{
+                                            setVisible(true)
+                                            const res = await FechtCode(values.email)
+                                            console.log(res)
+                                        }
+                                    } 
+                                    color={'red'} 
+                                    horizontal={'horizontal'} 
+                                    colorIcon={'black'} 
+                                />
                             </View>
                         </View>
+                        <ModalCode visible={visible} handleSubmit={handleSubmit}/>
                     </View>
                 )}
             </Formik>
-            <ModalToken visible={visible} />
         </View>
     )
 }
