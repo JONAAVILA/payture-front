@@ -9,6 +9,7 @@ import { useState } from "react";
 import ModalCode from "../modals/ModalCode";
 import DefaultText from "../customTexts/DefaultText";
 import FechtCode from "../../adapters/FechtCode";
+import { saveJwt } from "../../utils/jwtStorage";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false)
@@ -81,8 +82,8 @@ export default function CreateUsers (){
                                     onPress={
                                         async ()=>{
                                             setVisible(true)
-                                            const res = await FechtCode(values.email)
-                                            console.log(res)
+                                            const token = await FechtCode(values.email)
+                                            await saveJwt(token)
                                         }
                                     } 
                                     color={'red'} 
