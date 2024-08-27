@@ -92,7 +92,7 @@ export default function CreateUsers (){
                                 />
                             </View>
                         </View>
-                        <ModalCode visible={visible} handleSubmit={handleSubmit}/>
+                        <ModalCode visible={visible} submit={handleSubmit} />
                     </View>
                 )}
             </Formik>

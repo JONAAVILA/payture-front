@@ -4,8 +4,14 @@ import HeadingText from "../customTexts/HeadingText";
 import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from "../buttons/ButtonLogin";
 import { Formik } from "formik";
+import ValidateCode from "../../adapters/ValidateCode";
+import { getJwt } from "../../utils/jwtStorage";
+import { useNavigate } from "react-router-native";
 
-export default function ModalCode ({visible,handleSubmit}){
+export default function ModalCode ({visible,submit}){
+    
+    const navigate = useNavigate()
+
     return(
         <Modal transparent={true}
                 animationType="slide"
@@ -18,34 +24,45 @@ export default function ModalCode ({visible,handleSubmit}){
                     </View>
                     <Formik
                         initialValues={{
-                            token:''
+                            code:''
                         }}
-                        onSubmit={''}
+                        onSubmit={
+                            async (values)=>{
+                                const token = getJwt()
+                                const check = await ValidateCode(token,values.code)
+                                if(check === true){
+                                    submit()
+                                    navigate('/home')
+                                }else{
+                                    console.log('fail')
+                                }
+                            }
+                        }
                     >
                     {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>{
                         return(
                             <>
                                 <TextInput 
                                     style={styles.input}
-                                    value={values.token}
-                                    onChangeText={handleChange('token')}
-                                    onBlur={handleBlur('token')}
+                                    value={values.code}
+                                    onChangeText={handleChange('code')}
+                                    onBlur={handleBlur('code')}
                                     placeholderTextColor={theme.color.grey}
                                     selectionColor={theme.color.yellow}
-                                    placeholder="Token"
+                                    placeholder="code"
                                 />
-                                {touched.token && errors.token && (
-                                    <DefaultText>{errors.token}</DefaultText>
+                                {touched.code && errors.code && (
+                                    <DefaultText>{errors.code}</DefaultText>
                                 )}
+                                <ButtonLogin onPress={handleSubmit} />
                             </>
                         )
                     }}
                     </Formik>
-                    <View style={styles.info_token} >
+                    <View style={styles.info_code} >
                         <DefaultText fontSize={'xsmall'} >Valida el token ingrear el código que te vamos a enviar a tu email</DefaultText>
                     </View>
                 </View>
-                <ButtonLogin onPress={handleSubmit} />
             </View>
         </Modal>
     )
