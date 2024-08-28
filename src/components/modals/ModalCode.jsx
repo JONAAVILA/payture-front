@@ -5,7 +5,6 @@ import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from "../buttons/ButtonLogin";
 import { Formik } from "formik";
 import ValidateCode from "../../adapters/ValidateCode";
-import { getJwt } from "../../utils/jwtStorage";
 import { useNavigate } from "react-router-native";
 
 export default function ModalCode ({visible,submit}){
@@ -28,8 +27,8 @@ export default function ModalCode ({visible,submit}){
                         }}
                         onSubmit={
                             async (values)=>{
-                                const token = getJwt()
-                                const check = await ValidateCode(token,values.code)
+                                const code = values.code
+                                const check = await ValidateCode(code)
                                 if(check === true){
                                     submit()
                                     navigate('/home')
