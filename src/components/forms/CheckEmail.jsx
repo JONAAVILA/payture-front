@@ -7,7 +7,7 @@ import theme from "../../utils/theme";
 import HeadingText from "../customTexts/HeadingText";
 import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from "../buttons/ButtonLogin";
-import SingIn from '../../adapters/SingIn';
+import ValidateEmail from '../../adapters/ValidateEmail';
 
 export default function CheckEmail (){
     const [ accessError,setAccessError ] = useState('')
@@ -17,7 +17,7 @@ export default function CheckEmail (){
         <Formik initialValues={{email:''}}
                 validationSchema={validateSingin}
                 onSubmit={async (values)=> {
-                    const access = await SingIn(values)
+                    const access = await ValidateEmail(values)
                     if(access === true) navigate('/create')
                     setAccessError('User exist')
                 }}

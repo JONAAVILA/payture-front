@@ -10,6 +10,7 @@ import ModalCode from "../modals/ModalCode";
 import DefaultText from "../customTexts/DefaultText";
 import FechtCode from "../../adapters/FechtCode";
 import { saveJwt } from "../../utils/jwtStorage";
+import CreateUser from "../../adapters/createUser";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false)
@@ -23,7 +24,12 @@ export default function CreateUsers (){
                     password:''
                     }}
                     validationSchema={validateUser}
-                    onSubmit={''}
+                    onSubmit={
+                        async (values)=>{
+                            const create = await CreateUser(values)
+                            console.log(create.data)
+                        }
+                    }
                     >
                 {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>(
                     <View>
