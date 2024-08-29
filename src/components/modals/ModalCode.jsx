@@ -16,71 +16,60 @@ export default function ModalCode ({visible,submit}){
                 animationType="slide"
                 visible={visible}
                 >
-            <View style={styles.container_token} >
-                <View  style={styles.box_input_token} >
-                    <View style={styles.heading_input_token} >
-                        <HeadingText fontSize={'mediun'} color={'green'} >Token</HeadingText>
-                    </View>
-                    <Formik
-                        initialValues={{
-                            code:''
-                        }}
-                        onSubmit={
-                            async (values)=>{
-                                const code = values.code
-                                const check = await ValidateCode(code)
-                                if(check === true){
-                                    submit()
-                                    navigate('/home')
-                                }else{
-                                    console.log('fail')
-                                }
+                <Formik
+                    initialValues={{
+                        code:''
+                    }}
+                    onSubmit={
+                        async (values)=>{
+                            const code = values.code
+                            const check = await ValidateCode(code)
+                            if(check === true){
+                                submit()
+                                navigate('/home')
+                            }else{
+                                console.log('fail')
                             }
                         }
-                    >
-                    {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>{
-                        return(
-                            <>
-                                <TextInput 
-                                    style={styles.input}
-                                    value={values.code}
-                                    onChangeText={handleChange('code')}
-                                    onBlur={handleBlur('code')}
-                                    placeholderTextColor={theme.color.grey}
-                                    selectionColor={theme.color.yellow}
-                                    placeholder="code"
-                                />
-                                {touched.code && errors.code && (
-                                    <DefaultText>{errors.code}</DefaultText>
-                                )}
+                    }
+                >
+                {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>{
+                    return(
+                        <View style={styles.container_token}  >
+                            <View  style={styles.box_input_token} >
+                                    <View style={styles.heading_input_token} >
+                                        <HeadingText fontSize={'mediun'} color={'green'} >Code</HeadingText>
+                                    </View>
+                                    <TextInput 
+                                        style={styles.input}
+                                        value={values.code}
+                                        onChangeText={handleChange('code')}
+                                        onBlur={handleBlur('code')}
+                                        placeholderTextColor={theme.color.grey}
+                                        selectionColor={theme.color.yellow}
+                                        placeholder="code"
+                                    />
+                                    {touched.code && errors.code && (
+                                        <DefaultText>{errors.code}</DefaultText>
+                                    )}
+                                    <View>
+                                        <DefaultText fontSize={'xsmall'} >Valída el código que te vamos a envíar por email, revisa tu casilla de spam</DefaultText>
+                                    </View>
+                            </View>
+                            <View>
                                 <ButtonLogin onPress={handleSubmit} />
-                            </>
-                        )
-                    }}
-                    </Formik>
-                    <View style={styles.info_code} >
-                        <DefaultText fontSize={'xsmall'} >Valida el token ingrear el código que te vamos a enviar a tu email</DefaultText>
-                    </View>
-                </View>
-            </View>
+                            </View>
+                        </View>
+                    )
+                }}
+                </Formik>
         </Modal>
     )
 }
 
 const styles = StyleSheet.create({
-    input:{
-        backgroundColor:theme.color.black,
-        borderColor:theme.color.blackGrey,
-        borderWidth:1,
-        height:50,
-        borderRadius:10,
-        marginTop:5,
-        padding:8,
-        color:theme.color.white
-    },
     container_token:{
         flex:1,
-        marginTop:15,
         flexDirection:'row',
         alignItems:'flex-end',
         justifyContent:'center',
@@ -97,5 +86,17 @@ const styles = StyleSheet.create({
         height:260,
         width:335,
         backgroundColor:theme.color.black
+    },
+    heading_input_token:{
+        marginBottom:-5
+    },
+    input:{
+        backgroundColor:theme.color.black,
+        borderColor:theme.color.blackGrey,
+        borderWidth:1,
+        height:50,
+        borderRadius:10,
+        padding:8,
+        color:theme.color.white
     }
 })

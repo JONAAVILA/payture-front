@@ -7,7 +7,7 @@ import PostLine from "../lines/PostLine";
 export default function Home (){
     return(
         <View style={styles.container_home} >
-            <Navbar paht={'/usercreate'} pathProfile={'/profile'} />
+            <Navbar paht={'/create'} pathProfile={'/profile'} />
             <PostLine/>
             <StoryLine/>
             <Menu/>
