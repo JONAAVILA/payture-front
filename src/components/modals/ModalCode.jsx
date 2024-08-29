@@ -38,7 +38,7 @@ export default function ModalCode ({visible,submit}){
                         <View style={styles.container_token}  >
                             <View  style={styles.box_input_token} >
                                     <View style={styles.heading_input_token} >
-                                        <HeadingText fontSize={'mediun'} color={'green'} >Code</HeadingText>
+                                        <HeadingText fontSize={'medium'} color={'green'} >Code</HeadingText>
                                     </View>
                                     <TextInput 
                                         style={styles.input}

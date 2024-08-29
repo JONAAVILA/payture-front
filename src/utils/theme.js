@@ -15,12 +15,12 @@ const theme = {
         thin:12,
         xsmall:15,
         small:18,
-        mediun:35,
+        medium:35,
         large:50
     },
     fontFamily:{
         regular:'Outfit_400Regular',
-        mediun:'Outfit_500Medium',
+        medium:'Outfit_500Medium',
         pacifico:'Pacifico_400Regular',
     }
 }

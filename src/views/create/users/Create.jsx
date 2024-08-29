@@ -12,7 +12,7 @@ export default function Create (){
             <Navbar paht={'/'}/>
             <ScrollView>
                 <View style={styles.heading_account} >
-                    <HeadingText>Crear Cuenta</HeadingText>
+                    <HeadingText color={'white'} fontSize={'medium'} >Crear Cuenta</HeadingText>
                     <DefaultText fontSize={'xsmall'} >en solo unos simples pasos podes crear tu cuenta</DefaultText>
                 </View>
                 <CreateUsers/>

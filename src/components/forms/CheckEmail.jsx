@@ -25,7 +25,7 @@ export default function CheckEmail (){
             {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>(
                 <View style={styles.box_singin} >    
                     <View style={styles.box_input_singin} >
-                        <HeadingText fontSize='mediun' color={'green'} >Registrarse</HeadingText>
+                        <HeadingText fontSize='medium' color={'green'} >Registrarse</HeadingText>
                         <TextInput
                             style={styles.input}
                             value={values.email}

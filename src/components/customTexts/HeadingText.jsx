@@ -6,7 +6,7 @@ export default function HeadingText ({children,color,fontSize,fontFamily,restOfP
 
     const styleText =[
         styles.text,
-        fontSize === 'mediun' && styles.mediun,
+        fontSize === 'medium' && styles.medium,
         fontFamily === 'pacifico' && styles.pacifico,
         color === 'yellow' && styles.yellow,
         color === 'green' && styles.green,
@@ -26,10 +26,10 @@ const styles = StyleSheet.create({
     text:{
         color:theme.color.grey,
         fontSize:theme.size.large,
-        fontFamily:theme.fontFamily.mediun
+        fontFamily:theme.fontFamily.medium
     },
-    mediun:{
-        fontSize:theme.size.mediun
+    medium:{
+        fontSize:theme.size.medium
     },
     yellow:{
         color:theme.color.yellow

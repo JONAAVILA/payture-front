@@ -41,6 +41,6 @@ const styles = StyleSheet.create({
         color:theme.color.red
     },
     bold:{
-        fontFamily:theme.fontFamily.mediun
+        fontFamily:theme.fontFamily.medium
     }
 })

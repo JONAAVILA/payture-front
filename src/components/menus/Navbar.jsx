@@ -33,7 +33,7 @@ export default function Navbar ({paht,pathProfile,profile}){
                 </View>
             </View>
             <View style={styles.payture} >
-                <HeadingText fontSize={'mediun'} fontFamily={'pacifico'} color={'green'} >Payture</HeadingText>
+                <HeadingText fontSize={'medium'} fontFamily={'pacifico'} color={'green'} >Payture</HeadingText>
             </View>
         </View>
     )
