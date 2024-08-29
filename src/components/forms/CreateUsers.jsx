@@ -8,9 +8,9 @@ import ButtonLogin from '../buttons/ButtonLogin';
 import { useState } from "react";
 import ModalCode from "../modals/ModalCode";
 import DefaultText from "../customTexts/DefaultText";
-import FechtCode from "../../adapters/FechtCode";
+import GetCode from "../../adapters/GetCode";
 import { saveJwt } from "../../utils/jwtStorage";
-import CreateUser from "../../adapters/createUser";
+import PostUser from "../../adapters/PostUser";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false)
@@ -26,7 +26,7 @@ export default function CreateUsers (){
                     validationSchema={validateUser}
                     onSubmit={
                         async (values)=>{
-                            const create = await CreateUser(values)
+                            const create = await PostUser(values)
                             console.log(create.data)
                         }
                     }
@@ -88,7 +88,8 @@ export default function CreateUsers (){
                                     onPress={
                                         async ()=>{
                                             setVisible(true)
-                                            const token = await FechtCode(values.email)
+                                            const email = values.email
+                                            const token = await GetCode(email)
                                             await saveJwt(token)
                                         }
                                     } 
