@@ -53,9 +53,9 @@ const styles = StyleSheet.create({
         borderColor:theme.color.blackGrey,
         borderWidth:1,
         height:50,
-        borderRadius:10,
+        borderRadius:25,
         marginTop:5,
-        padding:8,
+        padding:15,
         color:theme.color.white
     }
 })

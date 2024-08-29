@@ -1,9 +1,9 @@
 const theme = {
     color:{
-        white:'#F3F3F3',
+        white:'#FAFAFA',
         grey:'#838383',
-        blackGrey:'#2A2A2A',
-        black:'#0B0B0B',
+        blackGrey:'#404040',
+        black:'#262626',
         black40:'#00000040',
         black99:'#00000099',
         yellow:'#FEFD8C',
@@ -15,7 +15,7 @@ const theme = {
         thin:12,
         xsmall:15,
         small:18,
-        mediun:45,
+        mediun:35,
         large:50
     },
     fontFamily:{

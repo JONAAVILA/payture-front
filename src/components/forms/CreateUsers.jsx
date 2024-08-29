@@ -42,7 +42,7 @@ export default function CreateUsers (){
                                         value={values.name}
                                         onChangeText={handleChange('name')}
                                         onBlur={handleBlur('name')}
-                                        placeholderTextColor={theme.color.grey}
+                                        placeholderTextColor={theme.color.white}
                                         selectionColor={theme.color.yellow}
                                         placeholder="nombre"
                                         />
@@ -53,7 +53,7 @@ export default function CreateUsers (){
                                         value={values.userName}
                                         onChangeText={handleChange('userName')}
                                         onBlur={handleBlur('userName')}
-                                        placeholderTextColor={theme.color.grey}
+                                        placeholderTextColor={theme.color.white}
                                         selectionColor={theme.color.yellow}
                                         placeholder="nombre de usuario"
                                         />
@@ -64,7 +64,7 @@ export default function CreateUsers (){
                                         value={values.email}
                                         onChangeText={handleChange('email')}
                                         onBlur={handleBlur('email')}
-                                        placeholderTextColor={theme.color.grey}
+                                        placeholderTextColor={theme.color.white}
                                         selectionColor={theme.color.yellow}
                                         placeholder="email"
                                         />
@@ -75,7 +75,7 @@ export default function CreateUsers (){
                                         value={values.password}
                                         onChangeText={handleChange('password')}
                                         onBlur={handleBlur('password')}
-                                        placeholderTextColor={theme.color.grey}
+                                        placeholderTextColor={theme.color.white}
                                         selectionColor={theme.color.yellow}
                                         placeholder="contraseña"
                                         />
@@ -92,10 +92,9 @@ export default function CreateUsers (){
                                             const token = await GetCode(email)
                                             await saveJwt(token)
                                         }
-                                    } 
-                                    color={'red'} 
+                                    }
                                     horizontal={'horizontal'} 
-                                    colorIcon={'black'} 
+                                    colorIcon={'green'} 
                                 />
                             </View>
                         </View>

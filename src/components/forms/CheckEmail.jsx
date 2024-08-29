@@ -50,7 +50,7 @@ export default function CheckEmail (){
                             al registrarse acepta las politicas y terminos de acuerdos de la plataforma
                         </DefaultText>
                     </View>
-                    <ButtonLogin onPress={handleSubmit} color={'red'} colorIcon={'black'} />
+                    <ButtonLogin onPress={handleSubmit} colorIcon={'green'} />
                 </View>)}
         </Formik>
     )
@@ -75,9 +75,9 @@ const styles = StyleSheet.create({
         borderColor:theme.color.blackGrey,
         borderWidth:1,
         height:50,
-        borderRadius:10,
+        borderRadius:25,
         marginTop:5,
-        padding:8,
+        padding:15,
         color:theme.color.white
     },
     error:{
