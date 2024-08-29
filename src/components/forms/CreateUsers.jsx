@@ -11,9 +11,17 @@ import DefaultText from "../customTexts/DefaultText";
 import GetCode from "../../adapters/GetCode";
 import { saveJwt } from "../../utils/jwtStorage";
 import PostUser from "../../adapters/PostUser";
+import ValidateUserName from "../../adapters/ValidateUserName";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false)
+
+    const handleCheckUser = async (text)=>{
+        if(text.length >= 3){
+            const check = await ValidateUserName(text)
+            console.log(check)
+        }
+    }
 
     return(
         <View>
@@ -53,7 +61,10 @@ export default function CreateUsers (){
                                 </View>
                                 <TextInput style={styles.input}
                                         value={values.userName}
-                                        onChangeText={handleChange('userName')}
+                                        onChangeText={(text)=>{
+                                            handleCheckUser(text)
+                                            handleChange('userName')(text)
+                                        }}
                                         onBlur={handleBlur('userName')}
                                         placeholderTextColor={theme.color.white}
                                         selectionColor={theme.color.yellow}
