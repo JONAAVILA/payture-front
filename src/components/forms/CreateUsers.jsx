@@ -35,7 +35,7 @@ export default function CreateUsers (){
                     <View>
                         <View style={styles.box_create_input}  >
                             <View style={styles.heading_input} >
-                                <HeadingText fontSize={'mediun'} color={'green'} >Usuario</HeadingText>
+                                <HeadingText fontSize={'medium'} color={'green'} >Usuario</HeadingText>
                             </View>
                             <View>
                                 <TextInput style={styles.input}
@@ -46,9 +46,11 @@ export default function CreateUsers (){
                                         selectionColor={theme.color.yellow}
                                         placeholder="nombre"
                                         />
-                                {touched.name && errors.name && (
-                                    <DefaultText>{errors.name}</DefaultText>
-                                )}
+                                <View style={styles.box_errors} >
+                                    {touched.name && errors.name && (
+                                        <DefaultText fontSize={'thin'} color={'red'} >{errors.name}</DefaultText>
+                                    )}
+                                </View>
                                 <TextInput style={styles.input}
                                         value={values.userName}
                                         onChangeText={handleChange('userName')}
@@ -57,9 +59,11 @@ export default function CreateUsers (){
                                         selectionColor={theme.color.yellow}
                                         placeholder="nombre de usuario"
                                         />
-                                {touched.userName && errors.userName && (
-                                    <DefaultText>{errors.userName}</DefaultText>
-                                )}
+                                <View style={styles.box_errors} >
+                                    {touched.userName && errors.userName && (
+                                        <DefaultText fontSize={'thin'} color={'red'}  >{errors.userName}</DefaultText>
+                                    )}
+                                </View>
                                 <TextInput style={styles.input}
                                         value={values.email}
                                         onChangeText={handleChange('email')}
@@ -68,9 +72,11 @@ export default function CreateUsers (){
                                         selectionColor={theme.color.yellow}
                                         placeholder="email"
                                         />
-                                {touched.email && errors.email && (
-                                    <DefaultText>{errors.email}</DefaultText>
-                                )}
+                                <View style={styles.box_errors} >
+                                    {touched.email && errors.email && (
+                                        <DefaultText fontSize={'thin'} color={'red'}  >{errors.email}</DefaultText>
+                                    )}
+                                </View>
                                 <TextInput style={styles.input}
                                         value={values.password}
                                         onChangeText={handleChange('password')}
@@ -79,9 +85,11 @@ export default function CreateUsers (){
                                         selectionColor={theme.color.yellow}
                                         placeholder="contraseña"
                                         />
-                                {touched.password && errors.password && (
-                                    <DefaultText>{errors.password}</DefaultText>
-                                )}
+                                <View style={styles.box_errors} >
+                                    {touched.password && errors.password && (
+                                        <DefaultText fontSize={'thin'} color={'red'} >{errors.password}</DefaultText>
+                                    )}
+                                </View>
                             </View>
                             <View style={styles.button_horizontal} >
                                 <ButtonLogin 
@@ -122,6 +130,10 @@ const styles = StyleSheet.create({
         marginTop:5,
         padding:8,
         color:theme.color.white
+    },
+    box_errors:{
+        height:12,
+        paddingLeft:8
     },
     heading_input:{
         marginTop:25,

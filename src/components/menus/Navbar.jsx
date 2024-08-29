@@ -51,13 +51,12 @@ const styles = StyleSheet.create({
         height:30,
         justifyContent:'center',
         alignItems:'center',
-        marginLeft:10
+        marginLeft:15
     },
     image_profile:{
         width:30,
         height:30,
         borderRadius:20,
-        marginLeft:10
     },
     box_profile:{
         flexDirection:'row',
