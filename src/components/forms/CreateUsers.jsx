@@ -1,26 +1,46 @@
 import { Formik } from "formik";
-import { View } from "moti";
-import { StyleSheet, TextInput } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 import { validateUser } from '../../utils/validate';
+import { saveJwt } from "../../utils/jwtStorage";
+import { useState } from "react";
 import theme from "../../utils/theme";
 import HeadingText from "../customTexts/HeadingText";
-import ButtonLogin from '../buttons/ButtonLogin';
-import { useState } from "react";
-import ModalCode from "../modals/ModalCode";
 import DefaultText from "../customTexts/DefaultText";
+import ButtonLogin from '../buttons/ButtonLogin';
+import ModalCode from "../modals/ModalCode";
 import GetCode from "../../adapters/GetCode";
-import { saveJwt } from "../../utils/jwtStorage";
 import PostUser from "../../adapters/PostUser";
 import ValidateUserName from "../../adapters/ValidateUserName";
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function CreateUsers (){
-    const [ visible,setVisible ] = useState(false)
+    const [ visible,setVisible ] = useState(false) 
+    const [ statusUser, setStatusUser ] = useState(false) 
 
     const handleCheckUser = async (text)=>{
         if(text.length >= 3){
             const check = await ValidateUserName(text)
+            setStatusUser(check)
             console.log(check)
         }
+    }
+
+    const handleStatusUser = ()=>{
+        if(statusUser){
+            return(
+                <>
+                    <AntDesign name="check" size={24} color="green" />
+                </>
+            )
+        }
+        if(!statusUser){
+            return(
+                <>
+                    <AntDesign name="close" size={24} color="red" />
+                </>
+            )
+        }
+        return null
     }
 
     return(
@@ -59,17 +79,22 @@ export default function CreateUsers (){
                                         <DefaultText fontSize={'thin'} color={'red'} >{errors.name}</DefaultText>
                                     )}
                                 </View>
-                                <TextInput style={styles.input}
-                                        value={values.userName}
-                                        onChangeText={(text)=>{
-                                            handleCheckUser(text)
-                                            handleChange('userName')(text)
-                                        }}
-                                        onBlur={handleBlur('userName')}
-                                        placeholderTextColor={theme.color.white}
-                                        selectionColor={theme.color.yellow}
-                                        placeholder="nombre de usuario"
-                                        />
+                                <View style={styles.box_status} >
+                                    <TextInput style={styles.input}
+                                            value={values.userName}
+                                            onChangeText={(text)=>{
+                                                handleCheckUser(text)
+                                                handleChange('userName')(text)
+                                            }}
+                                            onBlur={handleBlur('userName')}
+                                            placeholderTextColor={theme.color.white}
+                                            selectionColor={theme.color.yellow}
+                                            placeholder="nombre de usuario"
+                                            />
+                                    <View style={styles.status_user} >
+                                        {values.userName.length > 3 && handleStatusUser() }
+                                    </View>
+                                </View>
                                 <View style={styles.box_errors} >
                                     {touched.userName && errors.userName && (
                                         <DefaultText fontSize={'thin'} color={'red'}  >{errors.userName}</DefaultText>
@@ -154,5 +179,13 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems:'center',
         marginTop:25
+    },
+    box_status:{
+        position:'relative'
+    },
+    status_user:{
+        position:'absolute',
+        right:10,
+        top:17
     }
 })
