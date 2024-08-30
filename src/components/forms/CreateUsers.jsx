@@ -11,7 +11,7 @@ import ModalCode from "../modals/ModalCode";
 import GetCode from "../../adapters/GetCode";
 import PostUser from "../../adapters/PostUser";
 import ValidateUserName from "../../adapters/ValidateUserName";
-import AntDesign from '@expo/vector-icons/AntDesign';
+import CheckStatus from "../statusIcons/CheckStatus";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false) 
@@ -23,24 +23,6 @@ export default function CreateUsers (){
             setStatusUser(check)
             console.log(check)
         }
-    }
-
-    const handleStatusUser = ()=>{
-        if(statusUser){
-            return(
-                <>
-                    <AntDesign name="check" size={24} color="green" />
-                </>
-            )
-        }
-        if(!statusUser){
-            return(
-                <>
-                    <AntDesign name="close" size={24} color="red" />
-                </>
-            )
-        }
-        return null
     }
 
     return(
@@ -92,7 +74,7 @@ export default function CreateUsers (){
                                             placeholder="nombre de usuario"
                                             />
                                     <View style={styles.status_user} >
-                                        {values.userName.length > 3 && handleStatusUser() }
+                                        {values.userName.length > 3 && <CheckStatus statusUser={statusUser} /> }
                                     </View>
                                 </View>
                                 <View style={styles.box_errors} >
