@@ -1,1 +1,1 @@
-export const CREATE = "ALL_DRIVERS";
+export const UPLOAD_USER_EMAIL = "UPLOAD_USER_EMAIL";

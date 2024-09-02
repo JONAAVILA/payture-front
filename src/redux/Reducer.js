@@ -1,15 +1,20 @@
-import { ALL_DRIVERS } from './ActionsTypes';
+import { UPLOAD_USER_EMAIL } from './ActionsTypes';
 
 const initialState = {
-    drivers: []
+    user: {
+      name:'',
+      surname:'',
+      userName:'',
+      email:'',
+    }
 }
 
 const rootReducer = (state = initialState, action) =>{
     switch (action.type) {
-        case ALL_DRIVERS:
+        case UPLOAD_USER_EMAIL:
           return {
             ...state,
-            drivers: action.payload
+            email: action.payload
           };
         default:
             return state;
