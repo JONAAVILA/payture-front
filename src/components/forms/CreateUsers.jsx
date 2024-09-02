@@ -12,10 +12,13 @@ import GetCode from "../../adapters/GetCode";
 import PostUser from "../../adapters/PostUser";
 import ValidateUserName from "../../adapters/ValidateUserName";
 import CheckStatus from "../statusIcons/CheckStatus";
+import { useSelector } from "react-redux";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false) 
-    const [ statusUser, setStatusUser ] = useState(false) 
+    const [ statusUser, setStatusUser ] = useState(false)
+    const state = useSelector(state => state.user)
+    console.log(state)
 
     const handleCheckUser = async (text)=>{
         if(text.length >= 3){

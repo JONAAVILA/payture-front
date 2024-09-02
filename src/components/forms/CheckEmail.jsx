@@ -8,17 +8,23 @@ import HeadingText from "../customTexts/HeadingText";
 import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from "../buttons/ButtonLogin";
 import ValidateEmail from '../../adapters/ValidateEmail';
+import { updateUserEmail } from "../../redux/Actions";
+import { useDispatch } from "react-redux";
 
 export default function CheckEmail (){
     const [ accessError,setAccessError ] = useState('')
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     return( 
         <Formik initialValues={{email:''}}
                 validationSchema={validateSingin}
                 onSubmit={async (values)=> {
                     const access = await ValidateEmail(values)
-                    if(access === true) navigate('/create')
+                    if(access === true){
+                        dispatch(updateUserEmail(values.email))
+                        navigate('/create')
+                    }
                     setAccessError('User exist')
                 }}
                 >
