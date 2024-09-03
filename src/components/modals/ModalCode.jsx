@@ -6,9 +6,10 @@ import ButtonLogin from "../buttons/ButtonLogin";
 import { Formik } from "formik";
 import ValidateCode from "../../adapters/ValidateCode";
 import { useNavigate } from "react-router-native";
+import StateUser from "../../utils/states/StateUser";
 
 export default function ModalCode ({visible,submit}){
-    
+    const email = StateUser('email')
     const navigate = useNavigate()
 
     return(
@@ -53,7 +54,7 @@ export default function ModalCode ({visible,submit}){
                                         <DefaultText>{errors.code}</DefaultText>
                                     )}
                                     <View>
-                                        <DefaultText fontSize={'xsmall'} >Valída el código que te vamos a envíar por email, revisa tu casilla de spam</DefaultText>
+                                        <DefaultText fontSize={'xsmall'} >{`Te vamos a mandar un codigo al email ${email}, revisa tu casilla de spam`}</DefaultText>
                                     </View>
                             </View>
                             <View>
