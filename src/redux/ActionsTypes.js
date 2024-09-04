@@ -1,1 +1,2 @@
 export const UPLOAD_USER_EMAIL = "UPLOAD_USER_EMAIL";
+export const UPLOAD_USER = "UPLOAD_USER";

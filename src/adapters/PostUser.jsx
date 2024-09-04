@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const PostUser = async (values)=>{
     const user = await axios.post(URL_CREATE_USER,values)
-    return user
+    return user.data
 }
 
 export default PostUser

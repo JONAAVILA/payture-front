@@ -1,10 +1,11 @@
-import { UPLOAD_USER_EMAIL } from './ActionsTypes';
+import { UPLOAD_USER_EMAIL, UPLOAD_USER } from './ActionsTypes';
 
 const initialState = {
     user: {
       name:'',
       surname:'',
       userName:'',
+      password:'',
       email:'',
     }
 }
@@ -19,6 +20,16 @@ const rootReducer = (state = initialState, action) =>{
               email:action.payload
             }
           };
+        case UPLOAD_USER:
+          return {
+            ...state,
+            user:{
+              ...state.user,
+              name:action.payload.name,
+              userName:action.payload.userName,
+              password:action.payload.password
+            }
+          }
         default:
             return state;
     }

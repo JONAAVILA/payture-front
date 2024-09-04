@@ -8,12 +8,14 @@ import ValidateCode from "../../adapters/ValidateCode";
 import { useNavigate } from "react-router-native";
 import StateUser from "../../utils/states/StateUser";
 
-export default function ModalCode ({visible,submit}){
+export default function ModalCode ({visible}){
     const email = StateUser('email')
+    // const user = StateUser()
+    // console.log(user)
     const navigate = useNavigate()
 
     return(
-        <Modal transparent={true}
+        <Modal  transparent={true}
                 animationType="slide"
                 visible={visible}
                 >
@@ -58,7 +60,7 @@ export default function ModalCode ({visible,submit}){
                                     </View>
                             </View>
                             <View>
-                                <ButtonLogin onPress={handleSubmit} />
+                                <ButtonLogin onPress={handleSubmit} color={'black'} />
                             </View>
                         </View>
                     )

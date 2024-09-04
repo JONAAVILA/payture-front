@@ -9,9 +9,9 @@ import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from '../buttons/ButtonLogin';
 import ModalCode from "../modals/ModalCode";
 import GetCode from "../../adapters/GetCode";
-import PostUser from "../../adapters/PostUser";
 import ValidateUserName from "../../adapters/ValidateUserName";
 import CheckStatus from "../statusIcons/CheckStatus";
+import { updateUser } from "../../redux/Actions";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false) 
@@ -34,9 +34,9 @@ export default function CreateUsers (){
                     }}
                     validationSchema={validateUser}
                     onSubmit={
-                        async (values)=>{
-                            const create = await PostUser(values)
-                            console.log(create.data)
+                        (values)=>{
+                           updateUser(values)
+                           setVisible(!visible)
                         }
                     }
                     >
@@ -97,20 +97,16 @@ export default function CreateUsers (){
                             </View>
                             <View style={styles.button_horizontal} >
                                 <ButtonLogin 
-                                    onPress={
-                                        async ()=>{
-                                            setVisible(true)
-                                            const email = values.email
-                                            const token = await GetCode(email)
-                                            await saveJwt(token)
-                                        }
-                                    }
+                                    onPress={ async ()=> {
+                                        handleSubmit()
+                
+                                    }}
                                     horizontal={'horizontal'} 
                                     colorIcon={'green'} 
                                 />
                             </View>
                         </View>
-                        <ModalCode visible={visible} submit={handleSubmit} />
+                        <ModalCode visible={visible}/>
                     </View>
                 )}
             </Formik>

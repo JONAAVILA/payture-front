@@ -2,11 +2,12 @@ import { StyleSheet, Pressable } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import theme from "../../utils/theme";
 
-export default function ButtonLogin ({resOfProps,colorIcon,iconLeft,horizontal,onPress}){
+export default function ButtonLogin ({resOfProps,color,colorIcon,iconLeft,horizontal,onPress}){
 
     const buttonStyle = [
         styles.button,
-        horizontal === 'horizontal' && styles.horizontal
+        horizontal === 'horizontal' && styles.horizontal,
+        color === 'black' && styles.black
     ]
 
     const iconStyle = [
@@ -34,6 +35,9 @@ const styles = StyleSheet.create({
         borderRadius:25,
         width:50,
         height:260,
+    },
+    black:{
+        backgroundColor:theme.color.black
     },
     icon:{
         color:theme.color.red
