@@ -10,7 +10,6 @@ export const updateUserEmail = (email)=>{
 }
 
 export const updateUser = (values)=>{
-    console.log(values)
     return (dispatch)=>{
         return dispatch({
             type:UPLOAD_USER,

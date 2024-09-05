@@ -3,7 +3,6 @@ import { UPLOAD_USER_EMAIL, UPLOAD_USER } from './ActionsTypes';
 const initialState = {
     user: {
       name:'',
-      surname:'',
       userName:'',
       password:'',
       email:'',

@@ -33,12 +33,10 @@ export default function CreateUsers (){
                     password:''
                     }}
                     validationSchema={validateUser}
-                    onSubmit={
-                        (values)=>{
-                           updateUser(values)
-                           setVisible(!visible)
-                        }
-                    }
+                    onSubmit={(values)=>{
+                        updateUser(values)
+                        setVisible(true)
+                    }}
                     >
                 {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>(
                     <View>
@@ -97,10 +95,7 @@ export default function CreateUsers (){
                             </View>
                             <View style={styles.button_horizontal} >
                                 <ButtonLogin 
-                                    onPress={ async ()=> {
-                                        handleSubmit()
-                
-                                    }}
+                                    onPress={handleSubmit}
                                     horizontal={'horizontal'} 
                                     colorIcon={'green'} 
                                 />

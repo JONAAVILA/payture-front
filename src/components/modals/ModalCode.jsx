@@ -10,15 +10,13 @@ import StateUser from "../../utils/states/StateUser";
 
 export default function ModalCode ({visible}){
     const email = StateUser('email')
-    // const user = StateUser()
-    // console.log(user)
     const navigate = useNavigate()
 
     return(
-        <Modal  transparent={true}
-                animationType="slide"
-                visible={visible}
-                >
+        <Modal transparent={true}
+               animationType="slide"
+               visible={visible}
+               >
                 <Formik
                     initialValues={{
                         code:''
