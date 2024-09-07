@@ -12,10 +12,12 @@ import GetCode from "../../adapters/GetCode";
 import ValidateUserName from "../../adapters/ValidateUserName";
 import CheckStatus from "../statusIcons/CheckStatus";
 import { updateUser } from "../../redux/Actions";
+import StateUser from "../../utils/states/StateUser";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false) 
     const [ statusUser, setStatusUser ] = useState(false)
+    const email = StateUser('email')
 
     const handleCheckUser = async (text)=>{
         if(text.length >= 3){
@@ -25,18 +27,26 @@ export default function CreateUsers (){
         }
     }
 
+    const submit = async (values)=>{
+        const token = await GetCode(values.email)
+        const save = await saveJwt(token)
+        if(save){
+            updateUser(values)
+            setVisible(true)
+        }
+        return console.log('fallo')
+    }
+
     return(
         <View>
             <Formik initialValues={{
                     name:'',
                     userName:'',
-                    password:''
+                    password:'',
+                    email:email
                     }}
                     validationSchema={validateUser}
-                    onSubmit={(values)=>{
-                        updateUser(values)
-                        setVisible(true)
-                    }}
+                    onSubmit={ async (values)=> await submit(values)}
                     >
                 {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>(
                     <View>
