@@ -12,6 +12,16 @@ export default function ModalCode ({visible}){
     const email = StateUser('email')
     const navigate = useNavigate()
 
+    const submit = async (values)=>{
+        const code = values.code
+        const check = await ValidateCode(code)
+        if(check === true){
+            navigate('/home')
+        }else{
+            console.log('fail')
+        }
+    }
+
     return(
         <Modal transparent={true}
                animationType="slide"
@@ -21,18 +31,7 @@ export default function ModalCode ({visible}){
                     initialValues={{
                         code:''
                     }}
-                    onSubmit={
-                        async (values)=>{
-                            const code = values.code
-                            const check = await ValidateCode(code)
-                            if(check === true){
-                                submit()
-                                navigate('/home')
-                            }else{
-                                console.log('fail')
-                            }
-                        }
-                    }
+                    onSubmit={ async (values)=> await submit(values)}
                 >
                 {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>{
                     return(
