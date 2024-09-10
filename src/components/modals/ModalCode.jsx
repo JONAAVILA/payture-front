@@ -6,15 +6,16 @@ import ButtonLogin from "../buttons/ButtonLogin";
 import { Formik } from "formik";
 import ValidateCode from "../../adapters/ValidateCode";
 import { useNavigate } from "react-router-native";
-import StateUser from "../../utils/states/StateUser";
+import PostUser from '../../adapters/PostUser';
 
-export default function ModalCode ({visible}){
-    const email = StateUser('email')
+export default function ModalCode ({visible,valuesUser}){
+    console.log('modal:',valuesUser)
     const navigate = useNavigate()
 
     const submit = async (values)=>{
         const code = values.code
         const check = await ValidateCode(code)
+        const post = await PostUser(valuesUser)
         if(check === true){
             navigate('/home')
         }else{
@@ -53,7 +54,7 @@ export default function ModalCode ({visible}){
                                         <DefaultText>{errors.code}</DefaultText>
                                     )}
                                     <View>
-                                        <DefaultText fontSize={'xsmall'} >{`Te vamos a mandar un codigo al email ${email}, revisa tu casilla de spam`}</DefaultText>
+                                        <DefaultText fontSize={'xsmall'} >{`Te vamos a mandar un codigo al email ${valuesUser.email}, revisa tu casilla de spam`}</DefaultText>
                                     </View>
                             </View>
                             <View>

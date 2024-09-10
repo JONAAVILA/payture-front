@@ -32,12 +32,14 @@ export default function CreateUsers (){
         const save = await saveJwt(token)
         console.log(save)
         if(save){
+            console.log('values:',values)
             updateUser(values)
             setVisible(true)
             return
         }
         return console.log('fallo')
     }
+
 
     return(
         <View>
@@ -113,7 +115,7 @@ export default function CreateUsers (){
                                 />
                             </View>
                         </View>
-                        <ModalCode visible={visible}/>
+                        <ModalCode visible={visible} valuesUser={values} />
                     </View>
                 )}
             </Formik>
