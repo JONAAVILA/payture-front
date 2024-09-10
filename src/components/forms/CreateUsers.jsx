@@ -115,7 +115,7 @@ export default function CreateUsers (){
                                 />
                             </View>
                         </View>
-                        <ModalCode visible={visible} valuesUser={values} />
+                        <ModalCode visible={visible} valuesUser={values}  />
                     </View>
                 )}
             </Formik>

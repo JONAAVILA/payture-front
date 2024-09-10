@@ -7,9 +7,10 @@ import { Formik } from "formik";
 import ValidateCode from "../../adapters/ValidateCode";
 import { useNavigate } from "react-router-native";
 import PostUser from '../../adapters/PostUser';
+import { useState } from "react";
 
 export default function ModalCode ({visible,valuesUser}){
-    console.log('modal:',valuesUser)
+    const [ message, setMessage ] = useState('')
     const navigate = useNavigate()
 
     const submit = async (values)=>{
@@ -51,7 +52,10 @@ export default function ModalCode ({visible,valuesUser}){
                                         placeholder="code"
                                     />
                                     {touched.code && errors.code && (
-                                        <DefaultText>{errors.code}</DefaultText>
+                                        <DefaultText color={'red'} >{errors.code}</DefaultText>
+                                    )}
+                                    {message && (
+                                        <DefaultText color={'green'} >{message}</DefaultText>
                                     )}
                                     <View>
                                         <DefaultText fontSize={'xsmall'} >{`Te vamos a mandar un codigo al email ${valuesUser.email}, revisa tu casilla de spam`}</DefaultText>

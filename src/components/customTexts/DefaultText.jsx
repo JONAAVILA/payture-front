@@ -10,6 +10,7 @@ export default function DefaultText ({children,color,fontSize,fontWeigth,restOfP
         fontSize === 'thin' && styles.thin,
         color === 'yellow' && styles.yellow,
         color === 'red' && styles.red,
+        color === 'green' && styles.green,
         fontWeigth === 'bold' && styles.bold
     ]
 
@@ -39,6 +40,9 @@ const styles = StyleSheet.create({
     },
     red:{
         color:theme.color.red
+    },
+    green:{
+        color:theme.color.green
     },
     bold:{
         fontFamily:theme.fontFamily.medium
