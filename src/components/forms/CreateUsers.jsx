@@ -30,9 +30,11 @@ export default function CreateUsers (){
     const submit = async (values)=>{
         const token = await GetCode(values.email)
         const save = await saveJwt(token)
+        console.log(save)
         if(save){
             updateUser(values)
             setVisible(true)
+            return
         }
         return console.log('fallo')
     }

@@ -22,12 +22,7 @@ const rootReducer = (state = initialState, action) =>{
         case UPLOAD_USER:
           return {
             ...state,
-            user:{
-              ...state.user,
-              name:action.payload.name,
-              userName:action.payload.userName,
-              password:action.payload.password
-            }
+            user:action.payload
           }
         default:
             return state;

@@ -11,6 +11,7 @@ export const updateUserEmail = (email)=>{
 
 export const updateUser = (values)=>{
     return (dispatch)=>{
+        console.log('action:',values)
         return dispatch({
             type:UPLOAD_USER,
             payload:values
