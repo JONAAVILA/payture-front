@@ -27,8 +27,7 @@ export default function CreateUsers (){
     }
 
     const submit = async (values)=>{
-        const email = values.email
-        const res = await GetCode(email)
+        const res = await GetCode()
         if(res){
             console.log('values:',values)
             updateUser(values)

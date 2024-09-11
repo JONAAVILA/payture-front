@@ -2,16 +2,22 @@ import axios from "axios";
 import { URL_GET_CODE } from '@env';
 import { getJwt } from "../utils/jwtStorage";
 
-export default async function GetCode (email){
+export default async function GetCode (){
     try {
-        const emailToken = await getJwt()
-        if(emailToken != email) throw new Error('Email invalid');
+        const token = await getJwt()
+        if(!token) throw new Error('Something where wrong from the email');
+
+        const config = {
+            headers:{
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json'
+            }
+          }
 
         const response = await axios.post(
             URL_GET_CODE,
-            {
-                email:email
-            }
+            {},
+            config
         )
         return response.data
     } catch (error) {
