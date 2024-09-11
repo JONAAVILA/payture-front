@@ -11,7 +11,7 @@ import GetCode from "../../adapters/GetCode";
 import ValidateUserName from "../../adapters/ValidateUserName";
 import CheckStatus from "../statusIcons/CheckStatus";
 import { updateUser } from "../../redux/Actions";
-import StateUser from "../../utils/states/StateUser";
+import StateUser from "../../hooks/useStateUser";
 import { getJwt } from "../../utils/jwtStorage";
 
 export default function CreateUsers (){
