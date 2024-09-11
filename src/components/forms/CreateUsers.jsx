@@ -1,16 +1,16 @@
 import { Formik } from "formik";
 import { StyleSheet, TextInput, View } from "react-native";
 import { validateUser } from '../../utils/validate';
+import GetCode from "../../adapters/GetCode";
+import { updateUser } from "../../redux/Actions";
 import { useState } from "react";
 import theme from "../../utils/theme";
 import HeadingText from "../customTexts/HeadingText";
 import DefaultText from "../customTexts/DefaultText";
 import ButtonLogin from '../buttons/ButtonLogin';
 import ModalCode from "../modals/ModalCode";
-import GetCode from "../../adapters/GetCode";
 import ValidateUserName from "../../adapters/ValidateUserName";
 import CheckStatus from "../statusIcons/CheckStatus";
-import { updateUser } from "../../redux/Actions";
 import StateUser from "../../hooks/useStateUser";
 
 export default function CreateUsers (){
@@ -54,7 +54,12 @@ export default function CreateUsers (){
                     <View>
                         <View style={styles.box_create_input}  >
                             <View style={styles.heading_input} >
-                                <HeadingText fontSize={'medium'} color={'green'} >Usuario</HeadingText>
+                                <HeadingText 
+                                    fontSize={'medium'}
+                                    color={'green'} 
+                                >
+                                    Usuario
+                                </HeadingText>
                             </View>
                             <View>
                                 <TextInput style={styles.input}
@@ -67,7 +72,12 @@ export default function CreateUsers (){
                                         />
                                 <View style={styles.box_errors} >
                                     {touched.name && errors.name && (
-                                        <DefaultText fontSize={'thin'} color={'red'} >{errors.name}</DefaultText>
+                                        <DefaultText 
+                                            fontSize={'thin'} 
+                                            color={'red'} 
+                                        >
+                                            {errors.name}
+                                        </DefaultText>
                                     )}
                                 </View>
                                 <View style={styles.box_status} >
@@ -83,12 +93,17 @@ export default function CreateUsers (){
                                             placeholder="nombre de usuario"
                                             />
                                     <View style={styles.status_user} >
-                                        {values.userName.length > 3 && <CheckStatus statusUser={statusUser} /> }
+                                        {values.userName.length > 3 && <CheckStatus statusUser={statusUser} />}
                                     </View>
                                 </View>
                                 <View style={styles.box_errors} >
                                     {touched.userName && errors.userName && (
-                                        <DefaultText fontSize={'thin'} color={'red'}  >{errors.userName}</DefaultText>
+                                        <DefaultText 
+                                            fontSize={'thin'} 
+                                            color={'red'}
+                                        >
+                                            {errors.userName}
+                                        </DefaultText>
                                     )}
                                 </View>
                                 <TextInput style={styles.input}
@@ -101,7 +116,12 @@ export default function CreateUsers (){
                                         />
                                 <View style={styles.box_errors} >
                                     {touched.password && errors.password && (
-                                        <DefaultText fontSize={'thin'} color={'red'} >{errors.password}</DefaultText>
+                                        <DefaultText 
+                                            fontSize={'thin'} 
+                                            color={'red'}
+                                        >
+                                            {errors.password}
+                                        </DefaultText>
                                     )}
                                 </View>
                             </View>

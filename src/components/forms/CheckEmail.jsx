@@ -17,18 +17,12 @@ export default function CheckEmail (){
     const dispatch = useDispatch()
 
     const submit = async (values)=>{
-        const access = await ValidateEmail(values)
-        if(!access) setAccessError('User exist')
+        const email = values.email
+        const access = await ValidateEmail(email)
 
-        const token = await GetCode(values.email)
-        const save = await saveJwt(token)
-
-        if(save){
-            dispatch(updateUserEmail(values.email))
-            navigate('/create')
-            return
-        }
-        setAccessError('Something was failed')
+        if(!access) return setAccessError('User exist')
+        dispatch(updateUserEmail(values.email))
+        navigate('/create')
     }
 
     return( 

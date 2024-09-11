@@ -15,6 +15,6 @@ export default async function GetCode (email){
         )
         return response.data
     } catch (error) {
-        console.log('data:',{error:error.message})
+        console.log('getcode:',{error:error.message})
     }
 }
