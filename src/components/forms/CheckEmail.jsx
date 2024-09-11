@@ -16,17 +16,27 @@ export default function CheckEmail (){
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
+    const submit = async (values)=>{
+        const access = await ValidateEmail(values)
+        if(!access) setAccessError('User exist')
+
+        const token = await GetCode(values.email)
+        const save = await saveJwt(token)
+
+        if(save){
+            dispatch(updateUserEmail(values.email))
+            navigate('/create')
+            return
+        }
+        setAccessError('Something was failed')
+    }
+
     return( 
-        <Formik initialValues={{email:''}}
-                validationSchema={validateSingin}
-                onSubmit={async (values)=> {
-                    const access = await ValidateEmail(values)
-                    if(access === true){
-                        dispatch(updateUserEmail(values.email))
-                        navigate('/create')
-                    }
-                    setAccessError('User exist')
+        <Formik initialValues={{
+                    email:''
                 }}
+                validationSchema={validateSingin}
+                onSubmit={async (values)=> await submit(values)}
                 >
             {({handleChange,handleBlur,handleSubmit,values,errors,touched})=>(
                 <View style={styles.box_singin} >    

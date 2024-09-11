@@ -1,7 +1,6 @@
 import { Formik } from "formik";
 import { StyleSheet, TextInput, View } from "react-native";
 import { validateUser } from '../../utils/validate';
-import { saveJwt } from "../../utils/jwtStorage";
 import { useState } from "react";
 import theme from "../../utils/theme";
 import HeadingText from "../customTexts/HeadingText";
@@ -13,6 +12,7 @@ import ValidateUserName from "../../adapters/ValidateUserName";
 import CheckStatus from "../statusIcons/CheckStatus";
 import { updateUser } from "../../redux/Actions";
 import StateUser from "../../utils/states/StateUser";
+import { getJwt } from "../../utils/jwtStorage";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false) 
@@ -28,14 +28,17 @@ export default function CreateUsers (){
     }
 
     const submit = async (values)=>{
-        const token = await GetCode(values.email)
-        const save = await saveJwt(token)
-        console.log(save)
-        if(save){
-            console.log('values:',values)
-            updateUser(values)
-            setVisible(true)
-            return
+        const emailToken = await getJwt()
+        const email = values.email
+
+        if(emailToken.email === email){
+            const res = await GetCode(email)
+            if(res){
+                console.log('values:',values)
+                updateUser(values)
+                setVisible(true)
+                return
+            }
         }
         return console.log('fallo')
     }
