@@ -12,7 +12,6 @@ import ValidateUserName from "../../adapters/ValidateUserName";
 import CheckStatus from "../statusIcons/CheckStatus";
 import { updateUser } from "../../redux/Actions";
 import StateUser from "../../hooks/useStateUser";
-import { getJwt } from "../../utils/jwtStorage";
 
 export default function CreateUsers (){
     const [ visible,setVisible ] = useState(false) 
@@ -28,17 +27,13 @@ export default function CreateUsers (){
     }
 
     const submit = async (values)=>{
-        const emailToken = await getJwt()
         const email = values.email
-
-        if(emailToken.email === email){
-            const res = await GetCode(email)
-            if(res){
-                console.log('values:',values)
-                updateUser(values)
-                setVisible(true)
-                return
-            }
+        const res = await GetCode(email)
+        if(res){
+            console.log('values:',values)
+            updateUser(values)
+            setVisible(true)
+            return
         }
         return console.log('fallo')
     }
