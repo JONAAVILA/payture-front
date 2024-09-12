@@ -7,7 +7,7 @@ const ValidateCode = async (code)=>{
 
     const config = {
       headers:{
-        'Authorization': `Bearer ${token}`,
+        'Authorazation': `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     }

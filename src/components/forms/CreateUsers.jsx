@@ -21,8 +21,8 @@ export default function CreateUsers (){
     const handleCheckUser = async (text)=>{
         if(text.length >= 3){
             const check = await ValidateUserName(text)
-            setStatusUser(check)
-            console.log(check)
+            if(check != true) return setStatusUser(!statusUser)
+            return
         }
     }
 
