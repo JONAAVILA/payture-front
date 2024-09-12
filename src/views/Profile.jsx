@@ -25,7 +25,6 @@ export default function Profile (){
 
 const styles = StyleSheet.create({
     container_profile:{
-        marginTop:60,
         alignItems:'center',
         justifyContent:'center',
         position:'relative'

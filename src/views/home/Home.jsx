@@ -17,7 +17,6 @@ export default function Home (){
 
 const styles = StyleSheet.create({
     container_home:{
-        marginTop:60,
         alignItems:'center',
         justifyContent:'center',
         position:'relative'

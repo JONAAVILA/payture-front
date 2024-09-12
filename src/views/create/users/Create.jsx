@@ -24,7 +24,6 @@ export default function Create (){
 const styles = StyleSheet.create({
     container_create:{
         flex:1,
-        marginTop:60,
         width:400,
         backgroundColor:theme.color.black,
         justifyContent:'flex-start'

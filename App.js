@@ -5,6 +5,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import Main from './Main.jsx';
 import { Provider } from 'react-redux';
 import store from './src/redux/store.js';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 SplashScreen.preventAutoHideAsync()
 
@@ -27,8 +28,10 @@ export default function App() {
   }
 
   return (
-    <Provider store={store} >
-      <Main onLayout={onLayoutRootView}/>
-    </Provider>
+    <SafeAreaProvider>
+      <Provider store={store} >
+        <Main onLayout={onLayoutRootView}/>
+      </Provider>
+    </SafeAreaProvider>
   )
 }

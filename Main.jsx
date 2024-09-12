@@ -6,11 +6,22 @@ import { NativeRouter, Route, Routes } from "react-router-native";
 import Create from "./src/views/create/users/Create.jsx";
 import Home from "./src/views/home/Home.jsx";
 import Profile from "./src/views/Profile.jsx";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Main ({onLayout}){
+    const insets = useSafeAreaInsets()
+
     return(
         <NativeRouter>
-            <View style={styles.container} onLayout={onLayout} >
+            <View style={{
+                flex: 1,
+                width:'100%',
+                backgroundColor:theme.color.black,
+                alignItems: 'center',
+                justifyContent: 'center',
+                paddingTop:insets.top,
+                paddingBottom:insets.bottom
+            }} onLayout={onLayout} >
                 <StatusBar style='light' backgroundColor={theme.color.black} />
                 <Routes>
                     <Route exact path="/" element={<Login/>}/>
@@ -22,13 +33,3 @@ export default function Main ({onLayout}){
         </NativeRouter>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      width:'100%',
-      backgroundColor:theme.color.black,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
