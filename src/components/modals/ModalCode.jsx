@@ -16,7 +16,7 @@ export default function ModalCode ({visible,valuesUser}){
     const submit = async (values)=>{
         const code = values.code
         const check = await ValidateCode(code)
-        const post = await PostUser(valuesUser)
+        await PostUser(valuesUser)
         if(check === true){
             navigate('/home')
         }else{
