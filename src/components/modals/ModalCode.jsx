@@ -50,6 +50,7 @@ export default function ModalCode ({visible,valuesUser}){
                                         placeholderTextColor={theme.color.grey}
                                         selectionColor={theme.color.yellow}
                                         placeholder="code"
+                                        keyboardType="numeric"
                                     />
                                     {touched.code && errors.code && (
                                         <DefaultText color={'red'} >{errors.code}</DefaultText>
