@@ -7,8 +7,8 @@ const PostUser = async (valuesUser)=>{
 
     const config = {
             headers:{
-            'Authorazation': `Bearer ${token}`,
-            'Content-Type': 'application/json'
+                'Authorazation': `Bearer ${token}`,
+                'Content-Type': 'application/json'
             }
         }
 

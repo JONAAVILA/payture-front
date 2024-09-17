@@ -5,8 +5,6 @@ import { getJwt } from "../utils/jwtStorage";
 const ValidateCode = async (code)=>{
     const token = await getJwt()
 
-    console.log(token)
-
     const config = {
       headers:{
         'Authorazation': `Bearer ${token}`,
