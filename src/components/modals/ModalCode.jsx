@@ -57,7 +57,7 @@ export default function ModalCode ({visible,valuesUser}){
                                         <DefaultText color={'red'} >{errors.code}</DefaultText>
                                     )}
                                     {message && (
-                                        <DefaultText color={'green'} fontSize={'thin'} >{message}</DefaultText>
+                                        <DefaultText color={'red'} fontSize={'thin'} >{message}</DefaultText>
                                     )}
                                     <View>
                                         <DefaultText fontSize={'xsmall'} >{`Te vamos a mandar un codigo al email ${valuesUser.email}, revisa tu casilla de spam`}</DefaultText>
